@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VT Insurance · Seguros de viaje y asistencia internacional</title>
+  <meta name="description" content="Seguros de viaje y asistencia internacional con respaldo global. Coberturas médicas, cancelación, equipaje y más. Emisión inmediata y atención 24/7.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="VT Insurance · Seguros de viaje y asistencia internacional">
+  <meta property="og:description" content="Cobertura médica, cancelación, equipaje y asistencia 24/7. Emisión inmediata.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vtinsurance.com/">
+  <meta property="og:image" content="https://danieltipo1.github.io/vtinsurance/assets/og-cover.jpg">
+  <style>
+    :root{
+      --blue:#0033A1; --teal:#00A7A3; --ink:#1B2B41; --bg:#EEF2F7; --white:#fff; --accent:#FF6B00;
+      --radius:16px; --shadow: 0 10px 24px rgba(0,0,0,.09);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; color:var(--ink); background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1180px; margin:0 auto; padding:0 20px}
+    header{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid #E4E9F1}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800;font-size:18px;color:var(--blue)}
+    .brand img{height:34px}
+    .nav-cta{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--blue);color:var(--white)}
+    .btn-ghost{background:#F2F6FF;color:var(--blue)}
+    .hero{background:
+      radial-gradient(1200px 480px at 80% -10%, rgba(0,167,163,.18), transparent 60%),
+      linear-gradient(180deg,#F8FAFF 0%, #EEF2F7 100%);
+      padding:64px 0 32px
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-block;background:#E8F4FF;color:var(--blue);padding:6px 12px;border-radius:999px;font-weight:700}
+    h1{font-size:44px;line-height:1.08;margin:14px 0 10px}
+    .lead{font-size:18px;opacity:.9;max-width:720px}
+    .hero-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .hero-card h3{margin:0 0 12px}
+    .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 4px}
+    .chip{background:#F0FFFD;color:#066;display:inline-flex;gap:8px;align-items:center;padding:8px 10px;border-radius:10px;font-weight:600}
+    .muted{color:#5B6C8B;font-size:14px}
+    .section{padding:54px 0}
+    .section h2{font-size:32px;margin:0 0 6px}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+    .kpi{background:var(--white);border-radius:14px;padding:18px;text-align:center;box-shadow:var(--shadow)}
+    .kpi strong{font-size:28px;color:var(--blue)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
+    .card h3{margin:0 0 8px}
+    .plan{border:2px solid #E5EEF9}
+    .plan.featured{border-color:var(--teal);position:relative}
+    .badge{position:absolute;top:-12px;right:16px;background:var(--teal);color:#fff;font-size:12px;padding:6px 10px;border-radius:999px}
+    .price{font-size:34px;font-weight:800;color:var(--blue);margin:10px 0}
+    ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    ul.clean li{display:flex;gap:10px;align-items:flex-start}
+    .tick{width:22px;height:22px;border-radius:6px;background:#E9FBF9;color:#066;display:flex;align-items:center;justify-content:center;font-weight:900}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .faq{background:var(--white);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+    details{border:1px solid #E6ECF6;border-radius:12px;padding:14px;background:#FBFDFF}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    footer{background:#0A1A3A;color:#DCE6FF;padding:36px 0;margin-top:40px}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
+    .foot-grid h4{margin:0 0 10px;color:#fff}
+    .copyright{border-top:1px solid rgba(255,255,255,.12);margin-top:22px;padding-top:16px;color:#AFC5FF}
+    .floating-wa{position:fixed;right:18px;bottom:18px;z-index:60}
+    .floating-wa a{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#0e1f00;padding:12px 16px;border-radius:999px;font-weight:800;box-shadow:0 10px 20px rgba(37,211,102,.35)}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .mini{font-size:12px;color:#6A7CA3}
+    @media (max-width:960px){
+      .hero-grid,.kpis,.cards,.grid-2,.foot-grid{grid-template-columns:1fr}
+      h1{font-size:36px}
+    }
+  </style>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"VT Insurance",
+    "url":"https://danieltipo1.github.io/vtinsurance/",
+    "logo":"https://danieltipo1.github.io/vtinsurance/assets/logo.png",
+    "sameAs":["https://www.leandrollc.com"],
+    "contactPoint":[{"@type":"ContactPoint","telephone":"+1-305-803-3470","contactType":"customer service","areaServed":"Worldwide","availableLanguage":["es","en"]}]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.png" alt="VT Insurance" onerror="this.style.display='none'">
+        <span>VT Insurance</span>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="https://wa.me/13058033470?text=Quiero%20cotizar%20seguro%20de%20viaje" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-primary" href="tel:+13058033470">+1 305 803 3470</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Asistencia 24/7 · Emisión inmediata</span>
+        <h1>Seguros de viaje con respaldo global</h1>
+        <p class="lead">Coberturas médicas internacionales, cancelación, equipaje y más. Diseñado para viajeros exigentes y empresas con movilidad constante.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#cotizar">Cotizar ahora</a>
+          <a class="btn btn-ghost" href="#planes">Ver planes</a>
+        </div>
+        <p class="mini">Atención en español e inglés. Pagos con tarjeta. Sin letra pequeña.</p>
+      </div>
+      <div class="hero-card">
+        <h3>Incluye de base</h3>
+        <div class="list">
+          <span class="chip">✔ Cobertura médica internacional</span>
+          <span class="chip">✔ Telemedicina 24/7</span>
+          <span class="chip">✔ Cancelación / Interrupción</span>
+          <span class="chip">✔ Pérdida de equipaje</span>
+        </div>
+        <p class="muted">Imagen hero: sube tu foto a <code>assets/hero.jpg</code> y úsala como fondo si lo prefieres.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs / CONFÍA -->
+  <section class="section">
+    <div class="container">
+      <h2>Por qué VT Insurance</h2>
+      <p class="muted">Excelencia operativa con estándares europeos y soporte global.</p>
+      <div class="kpis">
+        <div class="kpi"><strong>24/7</strong><div>Asistencia multicanal</div></div>
+        <div class="kpi"><strong>+120</strong><div>Países con red médica</div></div>
+        <div class="kpi"><strong>15 min</strong><div>Emisión promedio</div></div>
+        <div class="kpi"><strong>95%</strong><div>Satisfacción de clientes</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURAS PRINCIPALES -->
+  <section class="section" id="coberturas">
+    <div class="container">
+      <h2>Coberturas principales</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Gastos médicos internacionales</h3>
+          <p>Atención hospitalaria, medicamentos y telemedicina. Límites elevados y sin papeleo innecesario.</p>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Urgencias y hospitalización</span></li>
+            <li><span class="tick">✓</span><span>Evacuación y repatriación</span></li>
+            <li><span class="tick">✓</span><span>Atención por accidente y enfermedad</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Cancelación e interrupción</h3>
+          <p>Protección de tu inversión ante imprevistos cubiertos antes o durante el viaje.</p>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Motivos médicos y laborales</span></li>
+            <li><span class="tick">✓</span><span>Retrasos y conexiones perdidas</span></li>
+            <li><span class="tick">✓</span><span>Reembolso de servicios no usados</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Equipaje y responsabilidad</h3>
+          <p>Pérdida, robo o daño de equipaje, además de responsabilidad civil del viajero.</p>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Pérdida / demora de equipaje</span></li>
+            <li><span class="tick">✓</span><span>Documentos y pertenencias</span></li>
+            <li><span class="tick">✓</span><span>Responsabilidad a terceros</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section class="section" id="planes">
+    <div class="container">
+      <h2>Planes pensados para ti</h2>
+      <div class="cards">
+        <div class="card plan">
+          <h3>Essential</h3>
+          <div class="price">€</div>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Médico internacional (límites básicos)</span></li>
+            <li><span class="tick">✓</span><span>Telemedicina 24/7</span></li>
+            <li><span class="tick">✓</span><span>Equipaje (base)</span></li>
+          </ul>
+          <div class="cta-row"><a class="btn btn-ghost" href="#cotizar">Cotizar</a></div>
+        </div>
+        <div class="card plan featured">
+          <span class="badge">Recomendado</span>
+          <h3>Plus</h3>
+          <div class="price">€€</div>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Médico internacional (límites altos)</span></li>
+            <li><span class="tick">✓</span><span>Cancelación / interrupción</span></li>
+            <li><span class="tick">✓</span><span>Evacuación y repatriación</span></li>
+          </ul>
+          <div class="cta-row"><a class="btn btn-primary" href="#cotizar">Cotizar</a></div>
+        </div>
+        <div class="card plan">
+          <h3>Executive</h3>
+          <div class="price">€€€</div>
+          <ul class="clean">
+            <li><span class="tick">✓</span><span>Top medical + preexistencias según evaluación</span></li>
+            <li><span class="tick">✓</span><span>Cancelación ampliada</span></li>
+            <li><span class="tick">✓</span><span>VIP concierge & upgrades</span></li>
+          </ul>
+          <div class="cta-row"><a class="btn btn-ghost" href="#cotizar">Cotizar</a></div>
+        </div>
+      </div>
+      <p class="mini">* Valores referenciales. La prima final depende de edad, destino y duración.</p>
+    </div>
+  </section>
+
+  <!-- PASOS -->
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card">
+        <h3>¿Cómo funciona?</h3>
+        <ul class="clean">
+          <li><span class="tick">1</span><span>Cuéntanos tu destino, fechas y viajeros.</span></li>
+          <li><span class="tick">2</span><span>Te enviamos opciones y comparativa clara.</span></li>
+          <li><span class="tick">3</span><span>Emisión digital en minutos y póliza al correo.</span></li>
+          <li><span class="tick">4</span><span>Asistencia 24/7 durante tu viaje.</span></li>
+        </ul>
+        <div class="cta-row"><a class="btn btn-primary" href="#cotizar">Quiero mi propuesta</a></div>
+      </div>
+      <div class="card">
+        <h3>Beneficios clave</h3>
+        <ul class="clean">
+          <li><span class="tick">✓</span><span>Red médica internacional</span></li>
+          <li><span class="tick">✓</span><span>Gestión de siniestros simple</span></li>
+          <li><span class="tick">✓</span><span>Atención humana, sin robots</span></li>
+          <li><span class="tick">✓</span><span>Facturación y soporte en español</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="container">
+      <h2>Preguntas frecuentes</h2>
+      <div class="grid-2">
+        <div class="faq">
+          <details open>
+            <summary>¿Cuándo debo contratar el seguro?</summary>
+            <p>Lo ideal es al reservar tu viaje. Así activas coberturas de cancelación desde el día uno.</p>
+          </details>
+          <details>
+            <summary>¿Cubre enfermedades preexistentes?</summary>
+            <p>Tenemos planes que evalúan preexistencias. Te asesoramos para elegir la opción adecuada.</p>
+          </details>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>¿Cómo uso la asistencia 24/7?</summary>
+            <p>Recibirás teléfonos y app de asistencia. Nos contactas y activamos el protocolo inmediato.</p>
+          </details>
+          <details>
+            <summary>¿Puedo asegurar viajes de empresa y grupos?</summary>
+            <p>Sí, contamos con pólizas corporativas y para grupos/estudios con tarifas preferenciales.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA COTIZAR -->
+  <section class="section" id="cotizar" style="background:linear-gradient(180deg,#E6F3FF 0,#F4FFFD 100%);">
+    <div class="container grid-2">
+      <div>
+        <h2>¿Listo para viajar con tranquilidad?</h2>
+        <p class="lead">Escríbenos por WhatsApp o llámanos y en minutos tendrás tu propuesta.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/13058033470?text=Quiero%20cotizar%20seguro%20de%20viaje" target="_blank" rel="noopener">WhatsApp ahora</a>
+          <a class="btn btn-ghost" href="tel:+13058033470">+1 305 803 3470</a>
+        </div>
+        <p class="mini">Atendemos Europa, EE.UU. y LATAM.</p>
+      </div>
+      <div class="card">
+        <h3>Solicitar cotización</h3>
+        <form onsubmit="event.preventDefault();window.open('https://wa.me/13058033470?text='+encodeURIComponent('Hola, deseo cotizar: '+document.getElementById('destino').value+' | Fechas: '+document.getElementById('fechas').value+' | Pasajeros: '+document.getElementById('pasajeros').value),'_blank')">
+          <div class="grid-2">
+            <input id="destino" required placeholder="Destino / País" style="padding:12px;border:1px solid #D7E0EF;border-radius:10px">
+            <input id="fechas" required placeholder="Fechas del viaje" style="padding:12px;border:1px solid #D7E0EF;border-radius:10px">
+          </div>
+          <div style="height:10px"></div>
+          <div class="grid-2">
+            <input id="pasajeros" required placeholder="Nº de viajeros" style="padding:12px;border:1px solid #D7E0EF;border-radius:10px">
+            <input id="email" type="email" placeholder="Email (opcional)" style="padding:12px;border:1px solid #D7E0EF;border-radius:10px">
+          </div>
+          <div style="height:12px"></div>
+          <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+        </form>
+        <p class="mini">Protección de datos: solo usamos tu información para contactarte sobre esta solicitud.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <h4>VT Insurance</h4>
+        <p>Seguros de viaje y asistencia internacional con respaldo global y servicio humano.</p>
+      </div>
+      <div>
+        <h4>Compañía</h4>
+        <p><a href="#coberturas">Coberturas</a><br><a href="#planes">Planes</a><br><a href="#faq">FAQ</a></p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p><a href="mailto:info@vtinsurance.com">info@vtinsurance.com</a><br>
+           <a href="tel:+13058033470">+1 305 803 3470</a><br>
+           <a href="https://wa.me/13058033470" target="_blank" rel="noopener">WhatsApp</a></p>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <p><a href="#">Términos</a><br><a href="#">Privacidad</a><br><a href="#">Cookies</a></p>
+      </div>
+    </div>
+    <div class="container copyright">
+      © <span id="y"></span> VT Insurance · Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <div class="floating-wa">
+    <a href="https://wa.me/13058033470?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%20seguros%20de%20viaje" target="_blank" rel="noopener">💬 WhatsApp</a>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
