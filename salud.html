@@ -1,0 +1,56 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salud · VT Insurance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#0984e3;--bg:#f5f8fc;--ink:#1b2b41;--w:#fff;--s:0 10px 24px rgba(0,0,0,.08);--r:16px}
+*{box-sizing:border-box}html,body{margin:0;font-family:Inter;background:var(--bg);color:var(--ink)}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7eef8}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}.p{background:var(--a);color:#fff}.g{background:#ecf5ff;color:var(--a)}
+.section{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--s);padding:20px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:960px){.cards,.grid2{grid-template-columns:1fr}}
+.mini{font-size:12px;color:#6a7ca3}
+</style></head><body>
+<header><div class="container nav">
+  <a href="index.html"><strong>VT Insurance</strong></a>
+  <div><a class="btn g" href="https://wa.me/34614253577" target="_blank">WhatsApp</a>
+       <a class="btn p" href="tel:+34614253577">+34 614 25 35 77</a></div>
+</div></header>
+
+<section class="section" style="background:linear-gradient(180deg,#fff 0,#f1f7ff 100%)">
+  <div class="container">
+    <h1>Seguros de Salud</h1>
+    <p class="lead">Opciones internacionales y orientación sobre planes bajo la Ley ACA (Marketplace, EE. UU.), según elegibilidad.</p>
+    <div style="margin-top:12px"><a class="btn p" href="#cotizar">Evaluar opciones</a></div>
+  </div>
+</section>
+
+<section class="section"><div class="container"><h2>Modalidades</h2>
+  <div class="cards">
+    <div class="card"><h3>Salud internacional</h3><p>Hospitalización, especialistas, maternidad (según póliza) y acceso a red global.</p></div>
+    <div class="card"><h3>Expat / estudiantes</h3><p>Planes para residencia temporal, estudios o trabajo en el exterior.</p></div>
+    <div class="card"><h3>ACA / Marketplace (EE. UU.)</h3><p>Revisión de elegibilidad, comparativa de primas y subsidios disponibles.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="cotizar" style="background:#f7fbff"><div class="container grid2">
+  <div><h2>Te ayudamos a escoger</h2><p>Cuéntanos tu país de residencia y necesidades.</p>
+    <a class="btn p" target="_blank" href="https://wa.me/34614253577?text=Salud%3A%20pa%C3%ADs%2C%20edad%2C%20necesidades">Hablar por WhatsApp</a>
+    <p class="mini" style="margin-top:10px">Info orientativa. No somos aseguradora. Elegibilidad y coberturas dependen del asegurador y país.</p>
+  </div>
+  <div class="card"><h3>Brief rápido</h3>
+    <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Salud | País: '+pais.value+' | Edad: '+edad.value+' | Interés: '+int.value),'_blank')">
+      <input id="pais" placeholder="País de residencia" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="edad" placeholder="Edad" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="int" placeholder="¿Qué necesitas? (ej. maternidad, deducible bajo)" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <button class="btn p" type="submit">Enviar</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="container">© <span id="y"></span> VT Insurance · Orientación en salud internacional y ACA (EE. UU.).</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
