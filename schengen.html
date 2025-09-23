@@ -1,0 +1,84 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seguro Schengen · VT Insurance</title>
+<meta name="description" content="Seguro de viaje para visado Schengen. Cobertura médica, repatriación y certificado válido para consulados.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--accent:#0984e3;--bg:#f5f8fc;--ink:#1b2b41;--white:#fff;--shadow:0 10px 24px rgba(0,0,0,.08);--r:16px}
+*{box-sizing:border-box}html,body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:var(--ink)}
+a{color:inherit;text-decoration:none}.container{max-width:1180px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7eef8}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}
+.btn-p{background:var(--accent);color:#fff}.btn-g{background:#ecf5ff;color:var(--accent)}
+h1{font-size:40px;margin:10px 0}.lead{font-size:18px;opacity:.92;max-width:780px}
+.section{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);padding:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mini{color:#6a7ca3;font-size:12px}
+footer{background:#0a1a3a;color:#dce6ff;padding:30px 0;margin-top:36px}
+@media(max-width:960px){.cards,.grid2{grid-template-columns:1fr}h1{font-size:32px}}
+</style></head><body>
+<header><div class="container nav">
+  <a href="index.html"><strong>VT Insurance</strong></a>
+  <div><a class="btn btn-g" href="https://wa.me/34614253577" target="_blank">WhatsApp</a>
+       <a class="btn btn-p" href="tel:+34614253577">+34 614 25 35 77</a></div>
+</div></header>
+
+<section class="section" style="background:linear-gradient(180deg,#fff 0,#f1f7ff 100%)">
+  <div class="container">
+    <h1>Seguro Schengen para tu visado</h1>
+    <p class="lead">Certificado válido ante consulados Schengen. Cobertura médica, repatriación y asistencia 24/7. Emisión digital en minutos.</p>
+    <div style="margin-top:14px">
+      <a class="btn btn-p" href="#cotizar">Cotizar ahora</a>
+      <a class="btn btn-g" href="#requisitos">Requisitos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="coberturas"><div class="container">
+  <h2>Coberturas principales</h2>
+  <div class="cards">
+    <div class="card"><h3>Gastos médicos</h3><p>Límites conforme a exigencias Schengen (mín. 30.000 €).</p></div>
+    <div class="card"><h3>Repatriación</h3><p>Evacuación médica y repatriación sanitaria incluidas.</p></div>
+    <div class="card"><h3>Asistencia 24/7</h3><p>Atención multicanal en español e inglés, todo el año.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="requisitos"><div class="container grid2">
+  <div class="card"><h3>Requisitos de visado</h3>
+    <ul>
+      <li>Cobertura válida en todo el espacio Schengen.</li>
+      <li>Monto mínimo de 30.000 € para gastos médicos.</li>
+      <li>Repatriación/evacuación obligatoria.</li>
+      <li>Vigencia por todas las fechas del viaje.</li>
+    </ul>
+    <p class="mini">* Requisitos orientativos; verifica condiciones de tu consulado.</p>
+  </div>
+  <div class="card"><h3>¿Cómo contratar?</h3>
+    <ol>
+      <li>Indícanos destino y fechas.</li>
+      <li>Te enviamos opciones y precio.</li>
+      <li>Emisión digital y certificado para tu cita.</li>
+    </ol>
+    <div style="margin-top:10px"><a class="btn btn-p" href="#cotizar">Quiero mi cotización</a></div>
+  </div>
+</div></section>
+
+<section class="section" id="cotizar" style="background:#f7fbff"><div class="container grid2">
+  <div><h2>Solicita tu certificado hoy</h2>
+    <p class="lead">Respuesta en minutos por WhatsApp.</p>
+    <a class="btn btn-p" target="_blank" href="https://wa.me/34614253577?text=Quiero%20cotizar%20Seguro%20Schengen%3A%20fechas%2Fviajeros">WhatsApp ahora</a>
+  </div>
+  <div class="card"><h3>Formulario rápido</h3>
+    <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Schengen | Destino: '+dest.value+' | Fechas: '+fec.value+' | Viajeros: '+via.value),'_blank')">
+      <input id="dest" placeholder="Destino / País" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="fec" placeholder="Fechas" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="via" placeholder="Nº de viajeros" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <button class="btn btn-p" type="submit">Enviar</button>
+    </form>
+    <p class="mini">Usaremos tus datos solo para esta solicitud.</p>
+  </div>
+</div></section>
+
+<footer><div class="container">© <span id="y"></span> VT Insurance · Info orientativa sujeta a condiciones del asegurador.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
