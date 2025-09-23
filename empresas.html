@@ -1,0 +1,63 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Empresas & Grupos · VT Insurance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#0984e3;--bg:#f5f8fc;--ink:#1b2b41;--w:#fff;--s:0 10px 24px rgba(0,0,0,.08);--r:16px}
+*{box-sizing:border-box}html,body{margin:0;font-family:Inter;background:var(--bg);color:var(--ink)}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7eef8}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}.p{background:var(--a);color:#fff}.g{background:#ecf5ff;color:var(--a)}
+.section{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--s);padding:20px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:960px){.cards,.grid2{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="container nav">
+  <a href="index.html"><strong>VT Insurance</strong></a>
+  <div><a class="btn g" href="https://wa.me/34614253577" target="_blank">WhatsApp</a>
+       <a class="btn p" href="tel:+34614253577">+34 614 25 35 77</a></div>
+</div></header>
+
+<section class="section" style="background:linear-gradient(180deg,#fff 0,#f1f7ff 100%)">
+  <div class="container">
+    <h1>Seguros para Empresas & Grupos</h1>
+    <p class="lead">Cobertura integral para viajes corporativos, eventos, estudiantes y misiones internacionales. Reporting y soporte dedicado.</p>
+    <div style="margin-top:12px"><a class="btn p" href="#contacto">Solicitar propuesta</a></div>
+  </div>
+</section>
+
+<section class="section"><div class="container"><h2>Lo que resolvemos</h2>
+  <div class="cards">
+    <div class="card"><h3>Política de viajes</h3><p>Planes alineados a tu travel policy y requisitos de compliance.</p></div>
+    <div class="card"><h3>Gestión centralizada</h3><p>Altas/bajas ágiles, facturación unificada y soporte a RR. HH.</p></div>
+    <div class="card"><h3>Atención prioritaria</h3><p>Canales dedicados 24/7 para incidentes y siniestros.</p></div>
+  </div>
+</div></section>
+
+<section class="section"><div class="container grid2">
+  <div class="card"><h3>Modalidades</h3>
+    <ul><li>Viaje corporativo por evento o proyecto.</li><li>Póliza anual por nómina (movilidad constante).</li><li>Grupos académicos, deportivos y culturales.</li></ul>
+  </div>
+  <div class="card"><h3>Entregables</h3>
+    <ul><li>Certificados por viajero.</li><li>Reporte mensual de consumos.</li><li>SLA de respuesta y escalamiento.</li></ul>
+  </div>
+</div></section>
+
+<section class="section" id="contacto" style="background:#f7fbff"><div class="container grid2">
+  <div><h2>¿Hablamos?</h2><p>Cuéntanos tamaño del grupo y destinos. Enviamos propuesta ajustada.</p>
+    <a class="btn p" target="_blank" href="https://wa.me/34614253577?text=Empresa%20o%20Grupo%3A%20personas%2C%20destinos%2C%20fechas">Contactar por WhatsApp</a>
+  </div>
+  <div class="card"><h3>Brief rápido</h3>
+    <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Empresa | Personas: '+p.value+' | Destinos: '+d.value+' | Fechas: '+f.value),'_blank')">
+      <input id="p" placeholder="Nº personas" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="d" placeholder="Destinos" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="f" placeholder="Fechas" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <button class="btn p" type="submit">Enviar</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="container">© <span id="y"></span> VT Insurance · Servicio para empresas y organizaciones.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
