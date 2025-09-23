@@ -1,0 +1,52 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Auto · VT Insurance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--a:#0984e3;--bg:#f5f8fc;--ink:#1b2b41;--w:#fff;--s:0 10px 24px rgba(0,0,0,.08);--r:16px}
+*{box-sizing:border-box}html,body{margin:0;font-family:Inter;background:var(--bg);color:var(--ink)}
+.container{max-width:1180px;margin:0 auto;padding:0 20px}a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7eef8}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}.p{background:var(--a);color:#fff}.g{background:#ecf5ff;color:var(--a)}
+.section{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:var(--r);box-shadow:var(--s);padding:20px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:960px){.cards,.grid2{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="container nav">
+  <a href="index.html"><strong>VT Insurance</strong></a>
+  <div><a class="btn g" href="https://wa.me/34614253577" target="_blank">WhatsApp</a>
+       <a class="btn p" href="tel:+34614253577">+34 614 25 35 77</a></div>
+</div></header>
+
+<section class="section" style="background:linear-gradient(180deg,#fff 0,#f1f7ff 100%)">
+  <div class="container">
+    <h1>Seguro de Auto</h1>
+    <p class="lead">Responsabilidad civil, daños, robo/incendio y asistencia en carretera. Opciones y precios según país y aseguradora.</p>
+  </div>
+</section>
+
+<section class="section"><div class="container"><h2>Paquetes</h2>
+  <div class="cards">
+    <div class="card"><h3>Básico</h3><p>Responsabilidad civil obligatoria y defensa jurídica.</p></div>
+    <div class="card"><h3>Intermedio</h3><p>+ Colisión y lunas (según condiciones).</p></div>
+    <div class="card"><h3>Completo</h3><p>+ Robo/incendio y vehículo de sustitución.</p></div>
+  </div>
+</div></section>
+
+<section class="section" id="cotizar" style="background:#f7fbff"><div class="container grid2">
+  <div><h2>Cotiza tu matrícula</h2><p>Necesitamos marca/modelo, año y código postal.</p>
+    <a class="btn p" target="_blank" href="https://wa.me/34614253577?text=Auto%3A%20marca%2Fmodelo%2C%20a%C3%B1o%2C%20CP">WhatsApp</a>
+  </div>
+  <div class="card"><h3>Brief rápido</h3>
+    <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Auto | Marca/Modelo: '+mm.value+' | Año: '+an.value+' | CP: '+cp.value),'_blank')">
+      <input id="mm" placeholder="Marca / Modelo" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="an" placeholder="Año" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <input id="cp" placeholder="Código Postal" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
+      <button class="btn p" type="submit">Enviar</button>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="container">© <span id="y"></span> VT Insurance · Tarifas sujetas a país y aseguradora.</div></footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body></html>
