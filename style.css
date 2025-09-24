@@ -1,9 +1,9 @@
 /* ======================================================= */
-/* === VT INSURANCE: ESTILOS GENERALES Y NUEVA PALETA === */
+/* === VT INSURANCE: ESTILOS GENERALES Y PALETA CORPORATIVA === */
 /* ======================================================= */
 
 :root {
-    /* Nueva Paleta de Colores: Azul Confianza y Azul Cielo */
+    /* Paleta de Colores: Azul Confianza y Azul Cielo */
     --primary: #0077B6;      /* Azul de Confianza (Botones, Iconos) */
     --secondary: #489FB5;    /* Azul Cielo (Fondos sutiles, Detalles) */
     --dark-bg: #003D5B;      /* Azul Marino Oscuro (Footer, Seguridad) */
@@ -13,7 +13,7 @@
     --text-ink: #1B2B41;     /* Tinta oscura para texto principal */
     --muted: #6A7CA3;        /* Texto secundario y descripciones */
     --color-success: #2E8B57; /* Verde para éxito o llamado urgente (Banner) */
-
+    
     /* TIPOGRAFÍA */
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Manrope', sans-serif;
@@ -21,7 +21,7 @@
     /* TAMAÑOS Y BORDES */
     --max-width: 1180px;
     --border-radius: 12px;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra más profesional */
+    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra profesional para tarjetas */
 }
 
 /* Base: Tipografía y Reseteo */
@@ -47,7 +47,7 @@ h1, h2, h3, h4 {
     font-family: var(--font-heading);
     color: var(--dark-bg);
     line-height: 1.2;
-    font-weight: 800; /* Más impacto */
+    font-weight: 800; /* Máximo impacto */
 }
 
 h1 { font-size: 48px; margin-bottom: 15px; }
@@ -118,7 +118,7 @@ a:hover {
     margin-bottom: 10px;
     font-family: var(--font-body);
     color: var(--text-ink);
-    appearance: none; /* Estilo base para select */
+    appearance: none;
 }
 
 /* ========================================= */
@@ -147,7 +147,7 @@ a:hover {
 .btn-primary:hover {
     background-color: #005A8D;
     border-color: #005A8D;
-    transform: translateY(-2px); /* Efecto 3D sutil */
+    transform: translateY(-2px); 
     box-shadow: 0 4px 8px rgba(0, 119, 182, 0.4);
 }
 
@@ -242,7 +242,7 @@ header {
     border-bottom: 2px solid var(--primary);
 }
 
-/* Banner de Alerta de Alta Conversión (¡Mayor impacto visual!) */
+/* Banner de Alerta de Alta Conversión */
 .alert-banner {
     background-color: var(--color-success); 
     color: var(--white);
@@ -253,15 +253,14 @@ header {
 }
 
 .alert-banner a {
-    color: #FFD700; /* Dorado/Amarillo para un contraste fuerte */
+    color: #FFD700; /* Dorado para contraste */
     font-weight: 800;
     text-decoration: underline;
     margin-left: 8px;
 }
 
-
 /* ========================================= */
-/* === GRIDS Y LAYOUTS === */
+/* === GRIDS Y ELEMENTOS DE DISEÑO (CARDS) === */
 /* ========================================= */
 
 .card {
@@ -269,12 +268,12 @@ header {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     padding: 30px;
-    border: 1px solid var(--light-gray); /* Borde suave para definir el espacio */
+    border: 1px solid var(--light-gray); 
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-3px); /* Pequeña elevación al pasar el ratón */
+    transform: translateY(-3px); /* Pequeña elevación */
     box-shadow: var(--shadow);
 }
 
@@ -299,9 +298,9 @@ header {
 .icon-new-style {
     color: var(--primary);
     padding: 15px;
-    background-color: var(--secondary); /* Fondo sutil azul cielo */
+    background-color: var(--secondary); 
     border-radius: 50%;
-    margin: 0 auto 15px; /* Centrar y espaciar */
+    margin: 0 auto 15px; 
     width: 70px;
     height: 70px;
     display: flex;
@@ -319,9 +318,13 @@ header {
 
 /* HERO Section Específico (index.html) */
 .hero-new-style {
-    background-color: var(--dark-bg); /* Fondo oscuro para el Hero centrado */
+    background-color: var(--dark-bg); 
     color: var(--white);
-    padding: 100px 0; /* Mayor padding vertical para impacto */
+    padding: 100px 0;
+}
+
+.hero-new-style h1 {
+    color: var(--white) !important;
 }
 
 /* About Section Específico (index.html) */
@@ -368,12 +371,6 @@ header {
     gap: 30px;
     margin-top: 40px;
 }
-
-.expert-card {
-    text-align: center;
-    /* Estilo de la tarjeta ya definido por .card */
-}
-
 
 /* ========================================= */
 /* === FOOTER === */
@@ -431,7 +428,7 @@ footer a:hover {
 .floating-wa a {
     background-color: #25D366;
     color: var(--white);
-    padding: 12px 18px; /* Ajuste de padding */
+    padding: 12px 18px; 
     border-radius: 50px;
     font-weight: 700;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -445,6 +442,13 @@ footer a:hover {
 /* ========================================= */
 /* === AJUSTES DE RESPONSIVIDAD (MOBILE) === */
 /* ========================================= */
+
+@media (min-width: 1180px) {
+    /* Ajuste para la grilla de 5 columnas en index.html */
+    .features-grid-new[style*="repeat(5"] {
+        grid-template-columns: repeat(5, 1fr) !important;
+    }
+}
 
 @media (max-width: 1180px) and (min-width: 769px) {
     /* Ajuste de Grillas para Tablets: la grilla de 5 pasa a ser 3 columnas */
@@ -468,10 +472,6 @@ footer a:hover {
     .section {
         padding: 40px 0;
     }
-
-    .container {
-        padding: 0 15px;
-    }
     
     .card {
         padding: 25px;
@@ -491,7 +491,6 @@ footer a:hover {
     }
 
     /* 3. Ajuste de Grillas y Columnas (Móvil) */
-    
     .grid-2,
     .features-grid-new, 
     .about-grid,
@@ -500,19 +499,13 @@ footer a:hover {
         grid-template-columns: 1fr;
         gap: 30px;
     }
-
+    
     /* Hero en móvil: centrado y más compacto */
     .hero-new-style {
         padding: 60px 0;
     }
-    
-    /* Ajuste para el Formulario rápido dentro de la CTA */
-    #cotizar .card .grid-2 {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
 
-    /* Pilares en móvil: Texto alineado a la izquierda con ícono flotante */
+    /* Pilares en móvil: Alineado a la izquierda */
     .feature-item-new {
         text-align: left; 
     }
