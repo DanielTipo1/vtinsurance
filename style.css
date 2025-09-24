@@ -1,507 +1,64 @@
-/* ======================================================= */
-/* === VT INSURANCE: ESTILOS GENERALES Y NUEVA PALETA === */
-/* ======================================================= */
-
-:root {
-    /* Nueva Paleta de Colores: Azul Confianza y Azul Cielo */
-    --primary: #0077B6;      /* Azul de Confianza (Botones, Iconos) */
-    --secondary: #489FB5;    /* Azul Cielo (Fondos sutiles, Detalles) */
-    --dark-bg: #003D5B;      /* Azul Marino Oscuro (Footer, Seguridad) */
-    --light-gray: #E0E7F0;   /* Líneas y bordes */
-    --off-white: #F5F7FA;    /* Fondo de secciones claras */
-    --white: #fff;           /* Blanco */
-    --text-ink: #1B2B41;     /* Tinta oscura para texto principal */
-    --muted: #6A7CA3;        /* Texto secundario y descripciones */
-    --border-radius: 12px;   /* Radio de borde para elementos (botones, tarjetas) */
-    --shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra profesional para tarjetas */
-}
-
-/* Base: Tipografía y Reseteo */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Manrope', sans-serif;
-    color: var(--text-ink);
-    background-color: var(--off-white);
-    line-height: 1.6;
-}
-
-/* Tipografía */
-h1, h2, h3, h4 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--dark-bg);
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-h1 { font-size: 48px; margin-bottom: 12px; }
-h2 { font-size: 36px; margin-bottom: 24px; }
-h3 { font-size: 24px; margin-bottom: 8px; }
-
-p {
-    margin-bottom: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary);
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--secondary);
-}
-
-/* Estructura */
-.container {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: var(--muted);
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.lead {
-    font-size: 20px;
-    color: var(--text-ink);
-    opacity: 0.9;
-    font-weight: 400;
-}
-
-.muted {
-    color: var(--muted);
-}
-
 /* ========================================= */
-/* === BOTONES (Buttons) === */
+/* === AJUSTES FINALES PARA SOLIDEZ === */
 /* ========================================= */
 
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.btn-primary {
-    background-color: var(--primary);
+/* Banner de Alerta de Alta Conversión (Usando color oscuro para impacto) */
+.alert-banner {
+    background-color: var(--primary); 
     color: var(--white);
-    border-color: var(--primary);
-}
-
-.btn-primary:hover {
-    background-color: #005A8D; /* Tono más oscuro de Primary */
-    border-color: #005A8D;
-}
-
-.btn-ghost {
-    background-color: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
-}
-
-.btn-ghost:hover {
-    background-color: var(--off-white);
-    color: #005A8D;
-    border-color: #005A8D;
-}
-
-.btn-teal {
-    background-color: var(--secondary);
-    color: var(--white);
-    border-color: var(--secondary);
-}
-
-.btn-teal:hover {
-    background-color: #3C879C;
-    border-color: #3C879C;
-}
-
-/* ========================================= */
-/* === HEADER Y NAVEGACIÓN === */
-/* ========================================= */
-
-header {
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--light-gray);
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--text-ink);
-}
-
-.brand img {
-    height: 30px;
-    margin-right: 8px;
-}
-
-.header-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 12px 0;
-    overflow: hidden; /* Importante para escritorio */
-}
-
-.nav-links a {
-    color: var(--text-ink);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 15px;
     font-weight: 600;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--primary);
+.alert-banner a {
+    color: var(--secondary); /* Contraste con el color secundario */
+    font-weight: 800;
+    text-decoration: underline;
+    margin-left: 8px;
+}
+
+/* Estilo para la página activa en el menú */
+.nav-links .current-page {
+    color: var(--primary) !important;
+    font-weight: 700;
     border-bottom: 2px solid var(--primary);
 }
 
-/* ========================================= */
-/* === GRIDS Y LAYOUTS === */
-/* ========================================= */
-
-.card {
-    background-color: var(--white);
+/* Estilos para formularios (inputs y selects) */
+.input-form {
+    padding: 12px;
+    border: 1px solid var(--light-gray);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 30px;
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-/* Tarjetas de Pilares/Features (4 Columnas) */
-.features-grid-new {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.feature-item-new {
-    text-align: center;
-}
-
-.feature-item-new h3 {
+    width: 100%; /* Asegura que tomen todo el espacio disponible */
+    margin-bottom: 10px;
+    font-family: 'Manrope', sans-serif;
     color: var(--text-ink);
 }
 
-.icon-new-style {
-    color: var(--primary);
-    font-size: 48px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-
-/* HERO Section Específico (index.html) */
-.hero-new-style {
-    background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
-    padding: 80px 0 0;
-}
-
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Más espacio para el texto */
-    gap: 40px;
-    align-items: center;
-}
-
-.hero-content-box {
-    padding: 40px;
-    background-color: var(--white);
-    box-shadow: var(--shadow);
-}
-
-.hero-image-overlay img {
+/* Clase de utilidad para ancho completo */
+.w-100 {
     width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    max-width: 100%; /* Asegura que la imagen sea responsive */
 }
 
-/* About Section Específico (index.html) */
-.about-new-style {
-    background-color: var(--dark-bg);
-    color: var(--white);
-    padding: 80px 0;
-}
 
-.about-new-style h2 {
-    color: var(--white);
-}
+/* --- AJUSTE RESPONSIVIDAD GRIDS DE PRODUCTOS (Para la grilla de 5) --- */
 
-.about-new-style .lead {
-    color: #CFE2FF;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.about-content-box {
-    background-color: var(--white);
-    color: var(--text-ink);
-    padding: 40px;
-    box-shadow: var(--shadow);
-}
-
-.about-content-box h2 {
-    color: var(--dark-bg);
-}
-
-.about-content-box .lead {
-    color: var(--text-ink);
-}
-
-.about-image-overlay img {
-    width: 100%;
-    height: auto;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    max-width: 100%; /* Asegura que la imagen sea responsive */
-}
-
-/* Sección de Expertos */
-.experts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.expert-card {
-    text-align: center;
-}
-
-.expert-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: var(--border-radius);
-    margin-bottom: 15px;
-}
-
-/* ========================================= */
-/* === FOOTER === */
-/* ========================================= */
-
-footer {
-    background-color: var(--dark-bg);
-    color: #d0dcff; /* Un blanco suave para el texto */
-    padding-top: 50px;
-    margin-top: 0;
-}
-
-.foot-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr; /* Más espacio para la descripción de la marca */
-    gap: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #005A8D;
-}
-
-footer h4 {
-    color: var(--white);
-    font-size: 18px;
-    margin-bottom: 15px;
-}
-
-footer a {
-    color: #d0dcff;
-    display: block;
-    margin-bottom: 8px;
-}
-
-footer a:hover {
-    color: var(--primary);
-}
-
-.copyright {
-    font-size: 14px;
-    text-align: center;
-    padding: 20px 0;
-    color: #d0dcff;
-}
-
-/* ========================================= */
-/* === ELEMENTOS FLOTANTES === */
-/* ========================================= */
-
-.floating-wa {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 999;
-}
-
-.floating-wa a {
-    background-color: #25D366; /* Color de WhatsApp */
-    color: var(--white);
-    padding: 10px 15px;
-    border-radius: 50px;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.floating-wa a:hover {
-    transform: scale(1.05);
-}
-
-/* ========================================= */
-/* === AJUSTES DE RESPONSIVIDAD (MOBILE) === */
-/* ========================================= */
-
-@media (max-width: 960px) {
-    
-    /* 1. Header y Navegación */
-    .topbar {
-        padding: 10px 15px;
+@media (min-width: 1180px) {
+    /* Ajuste para la grilla de 5 columnas en index.html */
+    .features-grid-new[style*="repeat(5"] {
+        grid-template-columns: repeat(5, 1fr) !important;
     }
+}
 
-    .header-actions {
-        display: none; /* Oculta los botones de la esquina superior */
+@media (max-width: 1180px) and (min-width: 769px) {
+    /* En vista tablet, la grilla de 5 pasa a ser 3 columnas */
+    .features-grid-new {
+        grid-template-columns: repeat(3, 1fr) !important;
     }
+}
 
-    .nav-links {
-        overflow-x: auto;
-        white-space: nowrap;
-        justify-content: flex-start;
-        gap: 15px;
-        padding: 12px 15px; /* Ajusta el padding lateral */
-    }
-
-    .nav-links a {
-        font-size: 14px;
-        padding: 5px 0;
-    }
-
-    /* 2. Tipografía y Estructura */
-    h1 { font-size: 32px; }
-    h2 { font-size: 28px; }
-    h3 { font-size: 20px; }
-    .lead { font-size: 17px; }
-
-    .section {
-        padding: 40px 0;
-    }
-
-    .container {
-        padding: 0 15px; /* Padding más estrecho en móvil */
-    }
-    
-    .card {
-        padding: 25px;
-    }
-
-    /* 3. Ajuste de Grillas y Columnas (Soluciona el solapamiento) */
-    
-    /* Todas las grillas pasan a 1 columna */
-    .grid-2, 
-    .features-grid-new, 
-    .hero-grid,
-    .about-grid,
-    .experts-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    /* Ajuste para el Formulario rápido dentro de la CTA */
-    #cotizar .card .grid-2 {
-        grid-template-columns: 1fr; /* Asegura que las columnas internas también se apilen */
-        gap: 10px;
-    }
-
-    /* Mueve la imagen Hero/About debajo del contenido en móvil */
-    .hero-grid .hero-image-overlay,
-    .about-grid .about-image-overlay {
-        order: 2;
-    }
-    
-    /* Ajuste de íconos en Pilares */
-    .feature-item-new {
-        text-align: left; /* Alinea el texto a la izquierda en móvil */
-    }
-
-    .icon-new-style {
-        float: left; /* Hace que el ícono flote */
-        margin-right: 15px;
-        font-size: 36px;
-    }
-
-    .feature-item-new h3 {
-        margin-top: 0;
-    }
-
-    /* Footer */
-    .foot-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
+@media (max-width: 768px) {
+    /* Mantenemos el ajuste móvil a 1 columna para todas las grillas */
 }
