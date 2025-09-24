@@ -1,235 +1,112 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VT Insurance · Seguros internacionales sin fricción</title>
-    <meta name="description" content="Seguros de viaje, salud, vida y auto con estándares europeos. Emisión ágil, comparativas claras y soporte humano 24/7. Atención en español e inglés.">
-    <link rel="canonical" href="https://danieltipo1.github.io/vtinsurance/">
+:root {
+    /* Paleta de colores inspirada en la imagen para inspirar confianza */
+    --dark-green: #2F4F4F; /* Un verde oscuro profundo */
+    --accent-green: #6B8E23; /* Un verde oliva como acento */
+    --light-beige: #D8D8BF; /* Un beige suave, para formas orgánicas */
+    --off-white: #F8F8F8;   /* Fondo claro para secciones */
+    --text-dark: #333;      /* Texto principal */
+    --text-light: #F0F0F0;  /* Texto en fondos oscuros */
+    --shadow-strong: 0 15px 30px rgba(0,0,0,0.2);
+    --shadow-medium: 0 8px 16px rgba(0,0,0,0.15);
+    --border-radius-lg: 20px;
+    --maxw: 1180px;
+    --font-primary: "Plus Jakarta Sans", sans-serif;
+    --font-secondary: "Manrope", sans-serif;
+}
 
-    <meta property="og:title" content="VT Insurance · Seguros internacionales sin fricción">
-    <meta property="og:description" content="Viaje, salud, vida y auto. Emisión ágil, soporte 24/7 y procesos claros.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://danieltipo1.github.io/vtinsurance/">
-    <meta property="og:image" content="https://danieltipo1.github.io/vtinsurance/assets/og-cover.jpg">
+/* Reset y Estilos Base */
+*{box-sizing:border-box}
+html,body{margin:0;font-family:var(--font-primary);background:var(--off-white);color:var(--text-dark);line-height:1.6;}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
 
-    <link rel="icon" href="assets/favicon.png">
+/* Header */
+header{position:sticky;top:0;z-index:40;background:var(--dark-green);border-bottom:1px solid rgba(255,255,255,.1);padding:10px 0;}
+.topbar{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--text-light);font-size:1.4em;}
+.brand img{height:38px;filter:brightness(0) invert(1);} /* Hace que el logo se vea blanco si es oscuro */
+.header-actions{display:flex;gap:10px;align-items:center}
+.nav-links{display:flex;gap:25px;align-items:center;flex-wrap:wrap;padding:8px 0 0;border-top:1px solid rgba(255,255,255,.1);margin-top:10px;}
+.nav-links a{color:var(--text-light);opacity:.8;transition:opacity 0.3s ease, color 0.3s ease;font-weight:600;}
+.nav-links a:hover{opacity:1;color:var(--light-beige);}
 
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 22px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all 0.3s ease;}
+.btn-primary{background:var(--accent-green);color:white;box-shadow:var(--shadow-medium);}
+.btn-primary:hover{background:darken(var(--accent-green), 10%);transform:translateY(-3px);box-shadow:var(--shadow-strong);}
+.btn-ghost{background:rgba(255,255,255,0.1);color:var(--text-light);border:1px solid rgba(255,255,255,0.2);padding:11px 21px;}
+.btn-ghost:hover{background:rgba(255,255,255,0.2);transform:translateY(-2px);box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+.btn-teal{background:var(--accent-green);color:white;box-shadow:var(--shadow-medium);} /* Adaptado a accent-green */
+.btn-teal:hover{background:darken(var(--accent-green), 10%);transform:translateY(-3px);box-shadow:var(--shadow-strong);}
 
-    <header>
-        <div class="container topbar">
-            <div class="brand">
-                <img src="assets/logo.png" alt="VT Insurance — Daniel Suarez Garcia" onerror="this.style.display='none'">
-                <span>VT Insurance</span>
-            </div>
-            <div style="display:flex;gap:10px;align-items:center">
-                <a class="btn btn-ghost" href="https://wa.me/34614253577?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20seguros" target="_blank" rel="noopener">WhatsApp</a>
-                <a class="btn btn-primary" href="tel:+34614253577">+34 614 25 35 77</a>
-            </div>
-        </div>
-        <nav class="container nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="schengen.html">Seguro Schengen</a>
-            <a href="empresas.html">Empresas</a>
-            <a href="salud.html">Salud</a>
-            <a href="vida.html">Vida</a>
-            <a href="auto.html">Auto</a>
-            <a href="#cotizar">Contacto</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <div class="container grid-2">
-            <div class="hero-text">
-                <span class="pill">Asistencia 24/7 · Emisión en minutos</span>
-                <h1>Seguros internacionales sin fricción</h1>
-                <p class="lead">Viaje, salud, vida y auto con estándares europeos. Procesos claros, comparativas honestas y soporte humano en español e inglés.</p>
-                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px">
-                    <a class="btn btn-primary" href="#cotizar">Cotizar ahora</a>
-                    <a class="btn btn-ghost" href="schengen.html">Seguro Schengen</a>
-                </div>
-                <p class="muted" style="font-size:12px;margin-top:10px">
-                    Email: <a href="mailto:lic.daniel.suarez.garcia@gmail.com">lic.daniel.suarez.garcia@gmail.com</a> · Tel/WhatsApp: <a href="tel:+34614253577">+34 614 25 35 77</a>
-                </p>
-            </div>
+/* Secciones Generales */
+.section{padding:80px 0;position:relative;overflow:hidden;} /* Añadido overflow:hidden para las formas orgánicas */
+h1{font-size:3.8em;line-height:1.1;margin:0 0 15px;color:var(--dark-green);}
+h2{font-size:2.8em;margin:0 0 10px;color:var(--text-dark);text-align:center;}
+h3{font-size:1.6em;margin:0 0 8px;}
+.lead{font-size:1.3em;opacity:.92;max-width:760px;}
+.muted{color:var(--muted);}
+.card{background:var(--off-white);border-radius:var(--border-radius-lg);box-shadow:var(--shadow-medium);padding:25px;transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-strong);}
+.section-title {text-align: center;font-size: 3em;margin-bottom: 10px;color: var(--dark-green);}
+.section-subtitle {text-align: center;font-size: 1.2em;color: var(--muted);margin-bottom: 50px;}
 
-            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
-                <div class="card" style="box-shadow:var(--shadow-sm)"><div style="font-weight:800;margin-bottom:6px">Viaje</div><div class="muted">Médico internacional, cancelación, equipaje.</div></div>
-                <div class="card" style="box-shadow:var(--shadow-sm)"><div style="font-weight:800;margin-bottom:6px">Salud / ACA</div><div class="muted">Opciones y guidance según elegibilidad.</div></div>
-                <div class="card" style="box-shadow:var(--shadow-sm)"><div style="font-weight:800;margin-bottom:6px">Vida</div><div class="muted">Término, entera, universal. Protección familiar.</div></div>
-                <div class="card" style="box-shadow:var(--shadow-sm)"><div style="font-weight:800;margin-bottom:6px">Auto</div><div class="muted">RC, daños, robo/incendio (según país/aseguradora).</div></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2>Nuestro compromiso</h2>
-            <p class="muted">Resultados medibles, sin letra pequeña y con soporte real.</p>
-            <div class="cards" style="margin-top:18px">
-                <div class="card">
-                    <h3 style="margin:0 0 6px">Transparencia</h3>
-                    <p class="muted">Comparativas claras entre aseguradoras, coberturas y límites.</p>
-                </div>
-                <div class="card">
-                    <h3 style="margin:0 0 6px">Agilidad</h3>
-                    <p class="muted">Emisión digital en minutos y certificado listo para visado.</p>
-                </div>
-                <div class="card">
-                    <h3 style="margin:0 0 6px">Acompañamiento</h3>
-                    <p class="muted">Te guiamos en reclamaciones y activación de asistencia 24/7.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="section about-section">
-        <div class="container grid-2">
-            <div class="about-image-container">
-                <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Consultores trabajando en una tableta">
-            </div>
-            <div class="about-content-text">
-                <h2>Soluciones a la altura de tu equipo</h2>
-                <p class="lead">Para directivos y equipos en movimiento, garantizamos soluciones a medida y un acompañamiento que va más allá de la póliza.</p>
-                <a href="empresas.html" class="btn btn-teal">Empresas & Grupos</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="dark section">
-        <div class="container">
-            <h2 style="color:#fff;margin-bottom:14px">Nuestras áreas de especialidad</h2>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
-                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px">
-                    <div style="font-weight:800">Viaje corporativo</div>
-                    <div style="opacity:.85">Póliza por evento o anual por nómina. Reporting y SLA.</div>
-                </div>
-                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px">
-                    <div style="font-weight:800">Estudiantes & grupos</div>
-                    <div style="opacity:.85">Cobertura para misiones, deportes y congresos.</div>
-                </div>
-                <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px">
-                    <div style="font-weight:800">Soporte prioritario</div>
-                    <div style="opacity:.85">Canales dedicados 24/7 y escalamiento.</div>
-                </div>
-            </div>
-            <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
-                <a href="empresas.html" class="btn btn-teal">Empresas & Grupos</a>
-                <a href="#cotizar" class="btn" style="background:#1B2B41;color:#E6EEFF;border:1px solid rgba(255,255,255,.2)">Solicitar propuesta</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section testimonials-section">
-        <div class="container">
-            <h2>Lo que dicen nuestros clientes</h2>
-            <div class="cards" style="margin-top:18px">
-                <div class="card testimonial-card">
-                    <p>“Certificado Schengen en 10 minutos y soporte impecable.”</p>
-                    <div class="author">
-                        <img src="https://images.pexels.com/photos/716107/pexels-photo-716107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Foto de Laura M.">
-                        <div class="muted">Laura M.</div>
-                    </div>
-                </div>
-                <div class="card testimonial-card">
-                    <p>“Tuve una urgencia y la asistencia respondió al instante.”</p>
-                    <div class="author">
-                        <img src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Foto de Andrés R.">
-                        <div class="muted">Andrés R.</div>
-                    </div>
-                </div>
-                <div class="card testimonial-card">
-                    <p>“Para viajes corporativos, su respuesta es inmediata.”</p>
-                    <div class="author">
-                        <img src="https://images.pexels.com/photos/4556781/pexels-photo-4556781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Foto de Carla P.">
-                        <div class="muted">Carla P.</div>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align:center;margin-top:18px">
-                <a class="btn btn-primary" href="#cotizar">Cotizar ahora</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="cotizar" style="background:linear-gradient(180deg,#eaf4ff 0,#f4fffd 100%);">
-        <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
-            <div>
-                <h2>¿Listo para cotizar?</h2>
-                <p class="lead">Escríbenos por WhatsApp o llámanos. Atención internacional (ES/EN).</p>
-                <div style="display:flex;gap:12px;flex-wrap:wrap">
-                    <a class="btn btn-primary" href="https://wa.me/34614253577?text=Quiero%20cotizar%20seguro" target="_blank" rel="noopener">WhatsApp ahora</a>
-                    <a class="btn btn-ghost" href="tel:+34614253577">+34 614 25 35 77</a>
-                </div>
-                <p class="muted" style="font-size:12px;margin-top:10px">Email: <a href="mailto:lic.daniel.suarez.garcia@gmail.com">lic.daniel.suarez.garcia@gmail.com</a></p>
-            </div>
-            <div class="card">
-                <h3>Solicitud rápida</h3>
-                <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Hola, deseo cotizar: '+document.getElementById('tipo').value+' | Destino/País: '+document.getElementById('destino').value+' | Fechas: '+document.getElementById('fechas').value+' | Viajeros: '+document.getElementById('viajeros').value),'_blank')">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-                        <select id="tipo" required style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
-                            <option value="Viaje">Viaje</option>
-                            <option value="Salud">Salud (ACA)</option>
-                            <option value="Vida">Vida</option>
-                            <option value="Auto">Auto</option>
-                            <option value="Empresas">Empresas</option>
-                        </select>
-                        <input id="destino" placeholder="Destino / País" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
-                    </div>
-                    <div style="height:10px"></div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-                        <input id="fechas" placeholder="Fechas del viaje" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
-                        <input id="viajeros" placeholder="Nº de viajeros" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
-                    </div>
-                    <div style="height:12px"></div>
-                    <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
-                </form>
-                <p class="muted" style="font-size:12px">Protección de datos: solo utilizamos tu información para esta solicitud.</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container foot-grid">
-            <div>
-                <h4>VT Insurance</h4>
-                <p class="muted" style="color:#d0dcff">Seguros internacionales con estándares de calidad europeos. Atención humana, clara y directa.</p>
-            </div>
-            <div>
-                <h4>Compañía</h4>
-                <p><a href="schengen.html">Seguro Schengen</a><br>
-                    <a href="empresas.html">Empresas</a><br>
-                    <a href="#cotizar">Cotizar</a></p>
-            </div>
-            <div>
-                <h4>Contacto</h4>
-                <p><a href="mailto:lic.daniel.suarez.garcia@gmail.com">lic.daniel.suarez.garcia@gmail.com</a><br>
-                    <a href="tel:+34614253577">+34 614 25 35 77</a><br>
-                    <a href="https://wa.me/34614253577" target="_blank" rel="noopener">WhatsApp</a></p>
-            </div>
-            <div>
-                <h4>Legal</h4>
-                <p><a href="terminos.html">Términos</a><br>
-                    <a href="privacidad.html">Privacidad</a></p>
-            </div>
-        </div>
-        <div class="container copyright">
-            © <span id="y"></span> VT Insurance · Actuamos como asesor/intermediario. No somos aseguradora. Información sujeta a condiciones del asegurador. Añadir nº de registro si aplica.
-        </div>
-    </footer>
-
-    <div class="floating-wa">
-        <a href="https://wa.me/34614253577?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
-    </div>
-
-    <script>
-        // Año dinámico
-        document.getElementById('y').textContent=new Date().getFullYear();
-    </script>
-</body>
-</html>
+/* HERO SECTION (Estilo nuevo) */
+.hero-new-style {
+    background-color: var(--dark-green);
+    color: var(--text-light);
+    padding: 100px 0 150px;
+    position: relative;
+}
+.hero-new-style::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+    background-color: var(--light-beige);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    opacity: 0.3;
+    z-index: 0;
+}
+.hero-new-style::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -120px;
+    width: 400px;
+    height: 400px;
+    background-color: var(--accent-green);
+    border-radius: 60% 40% 30% 70% / 60% 50% 50% 40%;
+    opacity: 0.2;
+    z-index: 0;
+}
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre las formas */
+}
+.hero-content-box {
+    background: var(--off-white);
+    color: var(--text-dark);
+    padding: 40px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-strong);
+    transform: translateY(30px); /* Ligero desplazamiento hacia abajo */
+    z-index: 2;
+}
+.hero-content-box h1 {
+    color: var(--dark-green);
+    font-size: 3.2em;
+}
+.hero-image-overlay {
+    position: relative;
+    width: 100%;
+    height: 450px; /*
