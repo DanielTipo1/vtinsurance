@@ -1,212 +1,132 @@
-/* ======================================================= */
-/* === VT INSURANCE: ESTILOS GENERALES Y PALETA CORPORATIVA === */
-/* ======================================================= */
+/* ======================================================================
+   0. VARS & RESET
+   ====================================================================== */
 
+/* Definición de Variables de Color y Tipografía */
 :root {
-    /* Paleta de Colores: Azul Confianza y Azul Cielo */
-    --primary: #0077B6;      /* Azul de Confianza (Botones, Iconos) */
-    --secondary: #489FB5;    /* Azul Cielo (Fondos sutiles, Detalles) */
-    --dark-bg: #003D5B;      /* Azul Marino Oscuro (Footer, Seguridad) */
-    --light-gray: #E0E7F0;   /* Líneas y bordes */
-    --off-white: #F5F7FA;    /* Fondo de secciones claras */
-    --white: #fff;           /* Blanco */
-    --text-ink: #1B2B41;     /* Tinta oscura para texto principal */
-    --muted: #6A7CA3;        /* Texto secundario y descripciones */
-    --color-success: #2E8B57; /* Verde para éxito o llamado urgente (Banner) */
-    
-    /* TIPOGRAFÍA */
+    /* Paleta de Colores (Basada en el logo azul oscuro/claro y acentos) */
+    --primary: #004AAD; /* Azul Corporativo principal (VT Blue) */
+    --secondary: #FFC000; /* Amarillo/Dorado para acentos (VT Accent) */
+    --teal: #00A389; /* Azul Verdoso/Turquesa para botones clave */
+    --white: #ffffff;
+    --light-gray: #f4f7f9; /* Fondo de secciones claras */
+    --dark-gray: #333d47; /* Texto oscuro/casi negro */
+    --text-ink: #1e293b; /* Texto principal */
+    --muted: #6b7280; /* Texto secundario o descriptivo */
+
+    /* Fuentes */
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Manrope', sans-serif;
 
-    /* TAMAÑOS Y BORDES */
-    --max-width: 1180px;
+    /* Estilos Generales */
     --border-radius: 12px;
-    --shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra profesional para tarjetas */
+    --transition-time: 0.3s;
 }
 
-/* Base: Tipografía y Reseteo */
-* {
+/* Reset Básico y Tipografía */
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-body);
     color: var(--text-ink);
-    background-color: var(--off-white);
     line-height: 1.6;
+    background-color: var(--light-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Tipografía */
-h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-    color: var(--dark-bg);
-    line-height: 1.2;
-    font-weight: 800; /* Máximo impacto */
-}
-
-h1 { font-size: 48px; margin-bottom: 15px; }
-h2 { font-size: 36px; margin-bottom: 24px; }
-h3 { font-size: 24px; margin-bottom: 8px; }
-
-p {
-    margin-bottom: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary);
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--secondary);
-}
-
-/* Estructura y Utilidades */
+/* Contenedor central (Máximo ancho) */
 .container {
-    max-width: var(--max-width);
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
+/* Títulos y Encabezados */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--primary);
+}
+
+h1 { font-size: 44px; }
+h2 { font-size: 36px; margin-bottom: 20px; }
+h3 { font-size: 24px; margin-bottom: 10px; }
+h4 { font-size: 18px; margin-bottom: 8px; }
+
+/* Enlaces por defecto */
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-time);
+}
+
+a:hover {
+    color: var(--teal);
+    text-decoration: underline;
+}
+
+/* Clases de utilidad */
 .section {
     padding: 80px 0;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.section-subtitle {
-    text-align: center;
-    font-size: 18px;
-    color: var(--muted);
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .lead {
-    font-size: 20px;
-    color: var(--text-ink);
-    opacity: 0.9;
+    font-size: 1.25rem;
     font-weight: 400;
+    color: var(--dark-gray);
 }
 
 .muted {
     color: var(--muted);
 }
 
-.w-100 {
-    width: 100%;
-}
-
-/* --- ELEMENTOS DE FORMULARIO --- */
-.input-form {
-    padding: 12px;
-    border: 1px solid var(--light-gray);
+.card {
+    background-color: var(--white);
+    padding: 30px;
     border-radius: var(--border-radius);
-    width: 100%; 
-    margin-bottom: 10px;
-    font-family: var(--font-body);
-    color: var(--text-ink);
-    appearance: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
 }
 
-/* ========================================= */
-/* === BOTONES (Buttons) === */
-/* ========================================= */
-
-.btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border: 2px solid transparent;
-    border-radius: var(--border-radius);
-    font-family: var(--font-heading);
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+.dark-bg .card {
+    background-color: #ffffff; /* Asegura que la card sea blanca sobre fondo oscuro */
 }
 
-.btn-primary {
-    background-color: var(--primary);
-    color: var(--white);
-    border-color: var(--primary);
-}
-
-.btn-primary:hover {
-    background-color: #005A8D;
-    border-color: #005A8D;
-    transform: translateY(-2px); 
-    box-shadow: 0 4px 8px rgba(0, 119, 182, 0.4);
-}
-
-.btn-ghost {
-    background-color: transparent;
-    color: var(--primary);
-    border-color: var(--primary);
-}
-
-.btn-ghost:hover {
-    background-color: var(--off-white);
-    color: #005A8D;
-    border-color: #005A8D;
-}
-
-.btn-teal {
-    background-color: var(--secondary);
-    color: var(--white);
-    border-color: var(--secondary);
-}
-
-.btn-teal:hover {
-    background-color: #3C879C;
-    border-color: #3C879C;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(72, 159, 181, 0.4);
-}
-
-/* ========================================= */
-/* === HEADER Y NAVEGACIÓN === */
-/* ========================================= */
+/* ======================================================================
+   1. HEADER & NAVIGATION
+   ====================================================================== */
 
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Top Bar (Logo + Botones) */
 .topbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    border-bottom: 1px solid var(--light-gray);
+    align-items: center;
+    padding: 15px 20px;
 }
 
 .brand {
     display: flex;
     align-items: center;
     font-size: 24px;
-    font-weight: 800;
-    color: var(--text-ink);
+    font-weight: 700;
+    color: var(--white);
 }
 
 .brand img {
-    height: 30px;
-    margin-right: 8px;
+    height: 40px;
+    margin-right: 10px;
 }
 
 .header-actions {
@@ -214,316 +134,384 @@ header {
     gap: 10px;
 }
 
+/* Botones */
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap; /* Evita que los textos de botón se rompan */
+    transition: all var(--transition-time);
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--text-ink);
+    border-color: var(--secondary);
+}
+
+.btn-primary:hover {
+    background-color: #ffb700;
+    border-color: #ffb700;
+    text-decoration: none;
+}
+
+.btn-teal { /* Botón de acento extra para CTAs específicos */
+    background-color: var(--teal);
+    color: var(--white);
+    border-color: var(--teal);
+}
+
+.btn-teal:hover {
+    background-color: #008775;
+    border-color: #008775;
+    text-decoration: none;
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    text-decoration: none;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* Navegación Principal */
 .nav-links {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 12px 0;
-    overflow: hidden;
+    justify-content: space-between;
+    background-color: #003a85; /* Un tono más oscuro para el nav */
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-links a {
-    color: var(--text-ink);
+    color: #CFE2FF;
     font-weight: 600;
-    padding: 5px 0;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.3s;
+    font-size: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color var(--transition-time);
 }
 
 .nav-links a:hover {
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
+    background-color: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
 }
 
-/* Estilo para la página activa en el menú */
+/* Indicador de página actual */
 .nav-links .current-page {
-    color: var(--primary) !important;
+    background-color: var(--secondary);
+    color: var(--text-ink);
     font-weight: 700;
-    border-bottom: 2px solid var(--primary);
 }
 
-/* Banner de Alerta de Alta Conversión */
+.nav-links .current-page:hover {
+    background-color: var(--secondary);
+    color: var(--text-ink);
+}
+
+
+/* ======================================================================
+   2. ALERT BANNER (Debajo del Header)
+   ====================================================================== */
+
 .alert-banner {
-    background-color: var(--color-success); 
+    background-color: var(--teal);
     color: var(--white);
-    padding: 12px 0;
+    padding: 15px 0;
     text-align: center;
-    font-size: 16px;
     font-weight: 600;
+    font-size: 16px;
 }
 
 .alert-banner a {
-    color: #FFD700; /* Dorado para contraste */
-    font-weight: 800;
+    color: var(--secondary);
     text-decoration: underline;
-    margin-left: 8px;
-}
-
-/* ========================================= */
-/* === GRIDS Y ELEMENTOS DE DISEÑO (CARDS) === */
-/* ========================================= */
-
-.card {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    padding: 30px;
-    border: 1px solid var(--light-gray); 
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-3px); /* Pequeña elevación */
-    box-shadow: var(--shadow);
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: center;
-}
-
-/* Tarjetas de Pilares/Features (4 o 5 Columnas) */
-.features-grid-new {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.feature-item-new {
-    text-align: center;
-}
-
-.icon-new-style {
-    color: var(--primary);
-    padding: 15px;
-    background-color: var(--secondary); 
-    border-radius: 50%;
-    margin: 0 auto 15px; 
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 10px;
     font-weight: 700;
-    color: var(--primary);
 }
 
-/* HERO Section Específico (index.html) */
-.hero-new-style {
-    background-color: var(--dark-bg); 
+.alert-banner a:hover {
+    color: #ffd700;
+}
+
+
+/* ======================================================================
+   3. HERO SECTIONS (Index y Producto)
+   ====================================================================== */
+
+/* Estilo para el Hero Genérico (Index) */
+.hero-style-one {
+    background: linear-gradient(135deg, var(--primary) 0%, #003a85 100%);
     color: var(--white);
     padding: 100px 0;
 }
 
-.hero-new-style h1 {
-    color: var(--white) !important;
-}
-
-/* About Section Específico (index.html) */
-.about-new-style {
-    background-color: var(--dark-bg);
+/* Estilo para el Hero de las Páginas de Producto (Fondo más oscuro, con imagen opcional) */
+.hero-new-style {
+    background: linear-gradient(135deg, var(--primary) 0%, #003a85 100%);
     color: var(--white);
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
-.about-new-style h2 {
-    color: var(--white);
+/* ======================================================================
+   4. LAYOUT GRIDS
+   ====================================================================== */
+
+/* Grid de 2 Columnas */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-.about-new-style .lead {
-    color: #CFE2FF;
+/* Grid de Características (2x2) */
+.features-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
+.feature-item-new {
+    text-align: center;
+    padding: 30px;
+}
+
+.icon-new-style {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 20px;
+    background-color: var(--light-gray);
+    border-radius: 50%;
+    padding: 20px;
+    display: inline-block;
+    border: 2px solid #e2e8f0;
+}
+
+.feature-item-new h3 {
+    margin-top: 0;
+    color: var(--text-ink);
+    font-weight: 700;
+}
+
+/* Sección de "Acerca de / Valor Agregado" (Texto + Imagen/Form) */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
 }
 
-.about-content-box {
-    background-color: var(--white);
-    color: var(--text-ink);
-    padding: 40px;
-    box-shadow: var(--shadow);
+.about-image-overlay {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
 }
 
 .about-image-overlay img {
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    max-width: 100%; 
 }
 
-/* Sección de Expertos/Testimonios */
-.experts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+.about-content-box {
+    padding: 30px;
+    background-color: var(--white);
 }
 
-/* ========================================= */
-/* === FOOTER === */
-/* ========================================= */
+.about-new-style {
+    padding: 60px 0;
+    background-color: var(--light-gray);
+}
+
+.dark-bg { /* Sección especial con fondo oscuro para contraste */
+    background-color: #003a85;
+    color: var(--white);
+}
+
+.dark-bg h2 {
+    color: var(--secondary);
+}
+.dark-bg .lead {
+    color: #CFE2FF;
+}
+
+
+/* ======================================================================
+   5. FORMULARIOS & INPUTS
+   ====================================================================== */
+
+.input-form {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color var(--transition-time), box-shadow var(--transition-time);
+    font-family: var(--font-body);
+}
+
+.input-form:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.2);
+}
+
+/* ======================================================================
+   6. FOOTER
+   ====================================================================== */
 
 footer {
-    background-color: var(--dark-bg);
-    color: #d0dcff;
-    padding-top: 50px;
-    margin-top: 0;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: 40px 0 20px;
+    margin-top: auto; /* Asegura que el footer esté en la parte inferior */
 }
 
 .foot-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #005A8D;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer h4 {
-    color: var(--white);
-    font-size: 18px;
+    color: var(--secondary);
+    font-size: 16px;
     margin-bottom: 15px;
 }
 
+footer p {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
 footer a {
-    color: #d0dcff;
+    color: #CFE2FF;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
 }
 
 footer a:hover {
-    color: var(--primary);
+    color: var(--secondary);
+    text-decoration: none;
 }
 
 .copyright {
-    font-size: 14px;
     text-align: center;
-    padding: 20px 0;
-    color: #d0dcff;
+    padding-top: 20px;
+    font-size: 12px;
+    color: var(--muted);
 }
 
-/* ========================================= */
-/* === ELEMENTOS FLOTANTES === */
-/* ========================================= */
+/* ======================================================================
+   7. FLOATING CTA (WhatsApp)
+   ====================================================================== */
 
 .floating-wa {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    z-index: 999;
+    z-index: 1000;
 }
 
 .floating-wa a {
-    background-color: #25D366;
+    background-color: #25D366; /* Color de WhatsApp */
     color: var(--white);
-    padding: 12px 18px; 
+    padding: 15px 25px;
     border-radius: 50px;
     font-weight: 700;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    font-size: 17px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform var(--transition-time);
 }
 
 .floating-wa a:hover {
-    transform: scale(1.05);
+    text-decoration: none;
+    transform: translateY(-3px);
+    background-color: #128C7E;
 }
 
-/* ========================================= */
-/* === AJUSTES DE RESPONSIVIDAD (MOBILE) === */
-/* ========================================= */
+/* ======================================================================
+   8. MEDIA QUERIES (Responsive Design)
+   ====================================================================== */
 
-@media (min-width: 1180px) {
-    /* Ajuste para la grilla de 5 columnas en index.html */
-    .features-grid-new[style*="repeat(5"] {
-        grid-template-columns: repeat(5, 1fr) !important;
+@media (max-width: 900px) {
+    .grid-2, .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image-overlay {
+        order: -1; /* Mueve la imagen arriba en móviles */
+    }
+
+    h1 { font-size: 36px; }
+    h2 { font-size: 28px; }
+
+    .hero-style-one, .hero-new-style {
+        padding: 60px 0;
+        text-align: center;
     }
 }
 
-@media (max-width: 1180px) and (min-width: 769px) {
-    /* Ajuste de Grillas para Tablets: la grilla de 5 pasa a ser 3 columnas */
-    .features-grid-new {
-        grid-template-columns: repeat(3, 1fr) !important;
+@media (max-width: 650px) {
+    /* Header y Navegación */
+    .topbar {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 10px;
+    }
+    .header-actions {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .header-actions .btn {
+        flex-grow: 1;
+    }
+    .nav-links {
+        overflow-x: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+    .nav-links a {
+        flex-shrink: 0; /* Evita que los enlaces se achiquen */
+        margin-right: 15px;
     }
 
-    .about-grid {
-        grid-template-columns: 1fr; /* Apilamos About en tablets */
-    }
-}
-
-
-@media (max-width: 960px) {
-    /* 1. Tipografía y Estructura */
-    h1 { font-size: 38px; }
-    h2 { font-size: 30px; }
-    h3 { font-size: 22px; }
-    .lead { font-size: 18px; }
-
+    /* Secciones */
     .section {
         padding: 40px 0;
     }
+
+    .features-grid-new {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 400px) {
+    .floating-wa a {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
     
-    .card {
-        padding: 25px;
-    }
-
-    /* 2. Header y Navegación */
-    .header-actions {
-        display: none; 
-    }
-
-    .nav-links {
-        overflow-x: auto;
-        white-space: nowrap;
-        justify-content: flex-start;
-        gap: 15px;
-        padding: 12px 15px;
-    }
-
-    /* 3. Ajuste de Grillas y Columnas (Móvil) */
-    .grid-2,
-    .features-grid-new, 
-    .about-grid,
-    .experts-grid,
     .foot-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    /* Hero en móvil: centrado y más compacto */
-    .hero-new-style {
-        padding: 60px 0;
-    }
-
-    /* Pilares en móvil: Alineado a la izquierda */
-    .feature-item-new {
-        text-align: left; 
-    }
-
-    .icon-new-style {
-        float: left;
-        margin-right: 15px;
-        font-size: 30px;
-        width: 60px;
-        height: 60px;
-    }
-
-    .feature-item-new p {
-        clear: both; /* Limpia el float para el párrafo */
-        margin-top: 15px;
-    }
-
-    .feature-item-new h3 {
-        margin-top: 0;
+        text-align: center;
     }
 }
