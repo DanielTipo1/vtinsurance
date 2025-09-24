@@ -1,52 +1,142 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Auto · VT Insurance</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-:root{--a:#0984e3;--bg:#f5f8fc;--ink:#1b2b41;--w:#fff;--s:0 10px 24px rgba(0,0,0,.08);--r:16px}
-*{box-sizing:border-box}html,body{margin:0;font-family:Inter;background:var(--bg);color:var(--ink)}
-.container{max-width:1180px;margin:0 auto;padding:0 20px}a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #e7eef8}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
-.btn{border:0;border-radius:12px;padding:10px 16px;font-weight:700;cursor:pointer}.p{background:var(--a);color:#fff}.g{background:#ecf5ff;color:var(--a)}
-.section{padding:48px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:#fff;border-radius:var(--r);box-shadow:var(--s);padding:20px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-@media(max-width:960px){.cards,.grid2{grid-template-columns:1fr}}
-</style></head><body>
-<header><div class="container nav">
-  <a href="index.html"><strong>VT Insurance</strong></a>
-  <div><a class="btn g" href="https://wa.me/34614253577" target="_blank">WhatsApp</a>
-       <a class="btn p" href="tel:+34614253577">+34 614 25 35 77</a></div>
-</div></header>
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Auto · VT Insurance</title>
+    <meta name="description" content="Seguro de Auto. Responsabilidad civil, daños, robo/incendio y asistencia en carretera. Opciones y precios según país y aseguradora.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
 
-<section class="section" style="background:linear-gradient(180deg,#fff 0,#f1f7ff 100%)">
-  <div class="container">
-    <h1>Seguro de Auto</h1>
-    <p class="lead">Responsabilidad civil, daños, robo/incendio y asistencia en carretera. Opciones y precios según país y aseguradora.</p>
-  </div>
-</section>
+    <header>
+        <div class="container topbar">
+            <div class="brand">
+                <img src="assets/logo.png" alt="VT Insurance — Daniel Suarez Garcia" onerror="this.style.display='none'">
+                <span>VT Insurance</span>
+            </div>
+            <div class="header-actions">
+                <a class="btn btn-ghost" href="https://wa.me/34614253577?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20seguros" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn btn-primary" href="tel:+34614253577">+34 614 25 35 77</a>
+            </div>
+        </div>
+        <nav class="container nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="schengen.html">Seguro Schengen</a>
+            <a href="empresas.html">Empresas</a>
+            <a href="salud.html">Salud</a>
+            <a href="vida.html">Vida</a>
+            <a href="auto.html">Auto</a>
+            <a href="#cotizar">Contacto</a>
+        </nav>
+    </header>
 
-<section class="section"><div class="container"><h2>Paquetes</h2>
-  <div class="cards">
-    <div class="card"><h3>Básico</h3><p>Responsabilidad civil obligatoria y defensa jurídica.</p></div>
-    <div class="card"><h3>Intermedio</h3><p>+ Colisión y lunas (según condiciones).</p></div>
-    <div class="card"><h3>Completo</h3><p>+ Robo/incendio y vehículo de sustitución.</p></div>
-  </div>
-</div></section>
+    <section class="section" style="background-color: var(--off-white);">
+        <div class="container" style="text-align: center;">
+            <h1 style="color:var(--dark-green);">Seguro de Auto</h1>
+            <p class="lead" style="max-width: 800px; margin: 0 auto;">Responsabilidad civil, daños, robo/incendio y asistencia en carretera. Opciones y precios según país y aseguradora.</p>
+        </div>
+    </section>
 
-<section class="section" id="cotizar" style="background:#f7fbff"><div class="container grid2">
-  <div><h2>Cotiza tu matrícula</h2><p>Necesitamos marca/modelo, año y código postal.</p>
-    <a class="btn p" target="_blank" href="https://wa.me/34614253577?text=Auto%3A%20marca%2Fmodelo%2C%20a%C3%B1o%2C%20CP">WhatsApp</a>
-  </div>
-  <div class="card"><h3>Brief rápido</h3>
-    <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Auto | Marca/Modelo: '+mm.value+' | Año: '+an.value+' | CP: '+cp.value),'_blank')">
-      <input id="mm" placeholder="Marca / Modelo" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
-      <input id="an" placeholder="Año" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
-      <input id="cp" placeholder="Código Postal" style="width:100%;padding:12px;border:1px solid #d7e0ef;border-radius:10px"><br><br>
-      <button class="btn p" type="submit">Enviar</button>
-    </form>
-  </div>
-</div></section>
+    <section class="key-features-section section">
+        <h2 class="section-title">Nuestros Paquetes</h2>
+        <p class="section-subtitle muted">Soluciones ágiles y claras para tu protección global.</p>
+        <div class="container features-grid-new">
+            <div class="feature-item-new card">
+                <i class="fas fa-car-crash icon-new-style"></i>
+                <h3>Básico</h3>
+                <p>Responsabilidad civil obligatoria y defensa jurídica.</p>
+            </div>
+            <div class="feature-item-new card">
+                <i class="fas fa-car-on icon-new-style"></i>
+                <h3>Intermedio</h3>
+                <p>+ Colisión y lunas (según condiciones).</p>
+            </div>
+            <div class="feature-item-new card">
+                <i class="fas fa-shield-alt icon-new-style"></i>
+                <h3>Completo</h3>
+                <p>+ Robo/incendio y vehículo de sustitución.</p>
+            </div>
+        </div>
+    </section>
 
-<footer><div class="container">© <span id="y"></span> VT Insurance · Tarifas sujetas a país y aseguradora.</div></footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
-</body></html>
+    <section class="section" id="cotizar" style="background:linear-gradient(180deg,#eaf4ff 0,#f4fffd 100%);">
+        <div class="container grid-2">
+            <div>
+                <h2>¿Listo para cotizar?</h2>
+                <p class="lead">Escríbenos por WhatsApp o llámanos. Atención internacional (ES/EN).</p>
+                <div style="display:flex;gap:12px;flex-wrap:wrap">
+                    <a class="btn btn-primary" href="https://wa.me/34614253577?text=Quiero%20cotizar%20seguro" target="_blank" rel="noopener">WhatsApp ahora</a>
+                    <a class="btn btn-ghost" href="tel:+34614253577">+34 614 25 35 77</a>
+                </div>
+                <p class="muted" style="font-size:12px;margin-top:10px">Email: <a href="mailto:lic.daniel.suarez.garcia@gmail.com">lic.daniel.suarez.garcia@gmail.com</a></p>
+            </div>
+            <div class="card">
+                <h3>Solicitud rápida</h3>
+                <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Hola, deseo cotizar: '+document.getElementById('tipo').value+' | Destino/País: '+document.getElementById('destino').value+' | Fechas: '+document.getElementById('fechas').value+' | Viajeros: '+document.getElementById('viajeros').value),'_blank')">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <select id="tipo" required style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
+                            <option value="Viaje">Viaje</option>
+                            <option value="Salud">Salud (ACA)</option>
+                            <option value="Vida">Vida</option>
+                            <option value="Auto">Auto</option>
+                            <option value="Empresas">Empresas</option>
+                        </select>
+                        <input id="destino" placeholder="Destino / País" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
+                    </div>
+                    <div style="height:10px"></div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <input id="fechas" placeholder="Fechas del viaje" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
+                        <input id="viajeros" placeholder="Nº de viajeros" style="padding:12px;border:1px solid #d7e0ef;border-radius:10px">
+                    </div>
+                    <div style="height:12px"></div>
+                    <button class="btn btn-primary" type="submit">Enviar por WhatsApp</button>
+                </form>
+                <p class="muted" style="font-size:12px">Protección de datos: solo utilizamos tu información para esta solicitud.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container foot-grid">
+            <div>
+                <h4>VT Insurance</h4>
+                <p class="muted" style="color:#d0dcff">Seguros internacionales con estándares de calidad europeos. Atención humana, clara y directa.</p>
+            </div>
+            <div>
+                <h4>Compañía</h4>
+                <p><a href="schengen.html">Seguro Schengen</a><br>
+                    <a href="empresas.html">Empresas</a><br>
+                    <a href="#cotizar">Cotizar</a></p>
+            </div>
+            <div>
+                <h4>Contacto</h4>
+                <p><a href="mailto:lic.daniel.suarez.garcia@gmail.com">lic.daniel.suarez.garcia@gmail.com</a><br>
+                    <a href="tel:+34614253577">+34 614 25 35 77</a><br>
+                    <a href="https://wa.me/34614253577" target="_blank" rel="noopener">WhatsApp</a></p>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <p><a href="terminos.html">Términos</a><br>
+                    <a href="privacidad.html">Privacidad</a></p>
+            </div>
+        </div>
+        <div class="container copyright">
+            © <span id="y"></span> VT Insurance · Actuamos como asesor/intermediario. No somos aseguradora. Información sujeta a condiciones del asegurador. Añadir nº de registro si aplica.
+        </div>
+    </footer>
+
+    <div class="floating-wa">
+        <a href="https://wa.me/34614253577?text=Hola%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+    </div>
+
+    <script>
+        // Año dinámico
+        document.getElementById('y').textContent=new Date().getFullYear();
+    </script>
+</body>
+</html>
