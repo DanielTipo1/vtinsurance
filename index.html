@@ -26,18 +26,23 @@
             <a href="index.html">Inicio</a>
             <a href="schengen.html">Seguro Schengen</a>
             <a href="empresas.html">Empresas</a>
-            <a href="salud.html">Salud</a>
-            <a href="vida.html">Vida</a>
+            <a href="salud.html" class="current-page">Salud</a> <a href="vida.html">Vida</a>
             <a href="auto.html">Auto</a>
             <a href="#cotizar">Contacto</a>
         </nav>
     </header>
 
+    <section class="alert-banner">
+        <div class="container">
+            <p>✈️ ¿Viaje a la vista? Recuerda que el **Seguro Schengen es Obligatorio**. <a href="schengen.html">¡Cotiza tu Viaje Aquí!</a></p>
+        </div>
+    </section>
+
     <section class="hero-new-style section">
         <div class="container hero-grid">
             <div class="hero-content-box card">
-                <h1>Tu salud sin fronteras ni límites.</h1>
-                <p class="lead">Accede a la mejor red médica global. Elige dónde y cómo cuidarte con la tranquilidad que te da una póliza internacional.</p>
+                <h1>Tu Salud sin Fronteras ni Límites.</h1>
+                <p class="lead">Accede a la mejor red médica global. Elige dónde y cómo cuidarte con la tranquilidad que te da una póliza internacional de alta gama.</p>
                 <a href="#cotizar" class="btn btn-primary">Cotiza tu Seguro de Salud</a>
             </div>
             <div class="hero-image-overlay">
@@ -97,15 +102,14 @@
                 <h3>Solicitud rápida de Salud</h3>
                 <form onsubmit="event.preventDefault();window.open('https://wa.me/34614253577?text='+encodeURIComponent('Hola, deseo cotizar: Salud Global | País de Residencia: '+document.getElementById('residencia').value+' | Edad: '+document.getElementById('edad_salud').value+' | Viajeros: '+document.getElementById('num_personas').value),'_blank')">
                     <div class="grid-2">
-                        <input id="residencia" placeholder="País de Residencia" required style="padding:12px;border:1px solid var(--light-gray);border-radius:var(--border-radius);">
-                        <input id="edad_salud" placeholder="Edad del solicitante" required style="padding:12px;border:1px solid var(--light-gray);border-radius:var(--border-radius);">
+                        <input id="residencia" placeholder="País de Residencia" required class="input-form"> <input id="edad_salud" placeholder="Edad del solicitante" required class="input-form">
                     </div>
                     <div style="height:12px"></div>
                     <div class="grid-2">
-                         <input id="num_personas" placeholder="Nº de personas a asegurar" style="padding:12px;border:1px solid var(--light-gray);border-radius:var(--border-radius);">
+                         <input id="num_personas" placeholder="Nº de personas a asegurar" class="input-form">
                     </div>
                     <div style="height:20px"></div>
-                    <button class="btn btn-primary" type="submit" style="width:100%;">Enviar Solicitud por WhatsApp</button>
+                    <button class="btn btn-primary w-100" type="submit">Enviar Solicitud por WhatsApp</button>
                 </form>
                 <p class="muted" style="font-size:12px;margin-top:10px">Recibirás una comparativa de planes de salud personalizados.</p>
             </div>
