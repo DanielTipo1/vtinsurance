@@ -1,26 +1,54 @@
+¡Entendido\! El diseño que me has proporcionado es muy moderno y limpio, con un fuerte enfoque en la estructura de cuadrícula, secciones claras y una tipografía legible.
+
+Vamos a adaptar tu `style.css` para reflejar este diseño, manteniendo tu paleta de colores azul-claro y añadiendo las imágenes más afines al perfil de seguros. El objetivo es lograr un estilo visual similar al del diseño, pero con tu contenido y temáticas.
+
+### Resumen de Cambios a `style.css`:
+
+1.  **Fuentes:** Conservar las fuentes `Plus Jakarta Sans` y `Manrope` para mantener la modernidad y legibilidad.
+2.  **Paleta de Colores:** Mantener tus azules (`--primary`, `--dark-blue`), blanco, grises y el acento amarillo/teal, que ya encajan con la estética limpia.
+3.  **Encabezados y Texto:** Ajustar tamaños y pesos para reflejar el diseño, priorizando claridad.
+4.  **Layout General:**
+      * **Contenedor (`.container`):** Mantenerlo para centrar el contenido.
+      * **Secciones (`.section`):** Asegurar espacios generosos y fondos claros o sutiles.
+      * **Grids:** Adaptar los `grid-2` y `features-grid-new` para que se parezcan más al diseño, especialmente en los "cards" y bloques de contenido.
+5.  **Componentes Clave:**
+      * **Header y Navegación:** Mantener la estructura actual, pero quizás simplificar un poco el `nav-links` para que sea más minimalista si el diseño lo sugiere (aunque tu nav actual es funcional).
+      * **Botones (`.btn`):** Adaptar el estilo para que se parezcan a los del diseño (bordes más sutiles, relleno consistente).
+      * **Tarjetas (`.card`):** Usar un estilo de tarjeta muy similar al del diseño: fondo blanco, esquinas redondeadas, sombra suave.
+      * **Iconos:** Mantener tus iconos, pero quizás ajustar su presentación dentro de las tarjetas.
+6.  **Hero Section:** El hero del diseño es muy atractivo. Lo adaptaremos para que tu hero principal y el de las páginas de producto tengan una estructura similar, con una imagen destacada y texto claro.
+
+### Reestructuración del `style.css`:
+
+```css
 /* ======================================================================
    0. VARS & RESET
    ====================================================================== */
 
 /* Definición de Variables de Color y Tipografía */
 :root {
-    /* Paleta de Colores (Basada en el logo azul oscuro/claro y acentos) */
+    /* Paleta de Colores (Adaptada al diseño: azules claros, grises, acentos) */
     --primary: #004AAD; /* Azul Corporativo principal (VT Blue) */
-    --secondary: #FFC000; /* Amarillo/Dorado para acentos (VT Accent) */
+    --primary-light: #e0f2f7; /* Un azul muy claro para fondos sutiles */
+    --secondary: #FFC000; /* Amarillo/Dorado para acentos */
     --teal: #00A389; /* Azul Verdoso/Turquesa para botones clave */
     --white: #ffffff;
-    --light-gray: #f4f7f9; /* Fondo de secciones claras */
-    --dark-gray: #333d47; /* Texto oscuro/casi negro */
+    --light-gray: #f8f8f8; /* Fondo general de secciones claras, más neutro */
+    --medium-gray: #e5e7eb; /* Bordes y separadores */
+    --dark-gray: #333d47; /* Texto oscuro */
     --text-ink: #1e293b; /* Texto principal */
     --muted: #6b7280; /* Texto secundario o descriptivo */
+    --blue-text: #007bff; /* Para enlaces específicos o texto de acento en azul */
 
-    /* Fuentes */
+    /* Fuentes (Conservamos las que tienes, son modernas y legibles) */
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Manrope', sans-serif;
 
     /* Estilos Generales */
-    --border-radius: 12px;
+    --border-radius: 10px; /* Un poco más suave para la estética del diseño */
     --transition-time: 0.3s;
+    --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra más sutil */
+    --shadow-medium: 0 8px 25px rgba(0, 0, 0, 0.12); /* Sombra para elementos destacados */
 }
 
 /* Reset Básico y Tipografía */
@@ -33,11 +61,13 @@
 body {
     font-family: var(--font-body);
     color: var(--text-ink);
-    line-height: 1.6;
-    background-color: var(--light-gray);
+    line-height: 1.7; /* Mayor interlineado para mejor lectura */
+    background-color: var(--light-gray); /* Fondo general muy claro */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    -webkit-font-smoothing: antialiased; /* Mejor renderizado de fuentes */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Contenedor central (Máximo ancho) */
@@ -50,37 +80,42 @@ body {
 /* Títulos y Encabezados */
 h1, h2, h3, h4 {
     font-family: var(--font-heading);
-    font-weight: 800;
-    line-height: 1.2;
-    color: var(--primary);
+    font-weight: 700; /* Un poco menos de peso para un look más moderno */
+    line-height: 1.3;
+    color: var(--dark-gray); /* Títulos más oscuros para contraste */
 }
 
-h1 { font-size: 44px; }
-h2 { font-size: 36px; margin-bottom: 20px; }
-h3 { font-size: 24px; margin-bottom: 10px; }
-h4 { font-size: 18px; margin-bottom: 8px; }
+h1 { font-size: 48px; font-weight: 800; } /* H1 más grande y bold */
+h2 { font-size: 38px; margin-bottom: 25px; color: var(--text-ink); }
+h3 { font-size: 26px; margin-bottom: 15px; color: var(--text-ink); }
+h4 { font-size: 20px; margin-bottom: 10px; color: var(--text-ink); }
+
+p {
+    margin-bottom: 15px;
+}
 
 /* Enlaces por defecto */
 a {
-    color: var(--primary);
+    color: var(--blue-text); /* Enlaces más acordes al diseño */
     text-decoration: none;
     transition: color var(--transition-time);
 }
 
 a:hover {
-    color: var(--teal);
+    color: var(--primary);
     text-decoration: underline;
 }
 
 /* Clases de utilidad */
 .section {
-    padding: 80px 0;
+    padding: 90px 0; /* Más espacio vertical */
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: 1.3rem; /* Más grande */
     font-weight: 400;
-    color: var(--dark-gray);
+    color: var(--muted); /* Más suave */
+    line-height: 1.8;
 }
 
 .muted {
@@ -89,14 +124,10 @@ a:hover {
 
 .card {
     background-color: var(--white);
-    padding: 30px;
+    padding: 35px; /* Más padding */
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e2e8f0;
-}
-
-.dark-bg .card {
-    background-color: #ffffff; /* Asegura que la card sea blanca sobre fondo oscuro */
+    box-shadow: var(--shadow-light); /* Sombra sutil */
+    border: 1px solid var(--medium-gray); /* Borde suave */
 }
 
 /* ======================================================================
@@ -104,8 +135,12 @@ a:hover {
    ====================================================================== */
 
 header {
-    background-color: var(--primary);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white); /* Header blanco como el diseño */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    position: sticky; /* Sticky header */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 /* Top Bar (Logo + Botones) */
@@ -114,6 +149,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
+    border-bottom: 1px solid var(--medium-gray); /* Separador suave */
 }
 
 .brand {
@@ -121,41 +157,43 @@ header {
     align-items: center;
     font-size: 24px;
     font-weight: 700;
-    color: var(--white);
+    color: var(--dark-gray); /* Color de texto más oscuro */
 }
 
 .brand img {
-    height: 40px;
-    margin-right: 10px;
+    height: 45px; /* Icono del logo un poco más grande */
+    margin-right: 12px;
 }
 
 .header-actions {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 /* Botones */
 .btn {
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 12px 25px; /* Más padding */
+    border-radius: var(--border-radius); /* Bordes más redondeados */
     font-weight: 600;
     text-decoration: none;
     text-align: center;
-    white-space: nowrap; /* Evita que los textos de botón se rompan */
+    white-space: nowrap;
     transition: all var(--transition-time);
     border: 2px solid transparent;
+    font-size: 16px;
 }
 
 .btn-primary {
-    background-color: var(--secondary);
-    color: var(--text-ink);
-    border-color: var(--secondary);
+    background-color: var(--primary); /* El azul principal */
+    color: var(--white);
+    border-color: var(--primary);
 }
 
 .btn-primary:hover {
-    background-color: #ffb700;
-    border-color: #ffb700;
+    background-color: #003a85; /* Un azul un poco más oscuro */
+    border-color: #003a85;
     text-decoration: none;
+    transform: translateY(-2px); /* Pequeño efecto hover */
 }
 
 .btn-teal { /* Botón de acento extra para CTAs específicos */
@@ -165,60 +203,64 @@ header {
 }
 
 .btn-teal:hover {
-    background-color: #008775;
-    border-color: #008775;
+    background-color: #008f7b;
+    border-color: #008f7b;
     text-decoration: none;
+    transform: translateY(-2px);
 }
 
-.btn-ghost {
+.btn-ghost { /* Botón con borde y fondo transparente */
     background-color: transparent;
-    color: var(--white);
-    border-color: var(--white);
+    color: var(--dark-gray); /* Texto oscuro */
+    border-color: var(--medium-gray); /* Borde gris */
 }
 
 .btn-ghost:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    background-color: var(--primary-light); /* Fondo azul claro al pasar el mouse */
+    color: var(--primary);
+    border-color: var(--primary-light);
     text-decoration: none;
+    transform: translateY(-2px);
 }
 
 .w-100 {
     width: 100%;
 }
 
-/* Navegación Principal */
+/* Navegación Principal (similar al diseño, más minimalista) */
 .nav-links {
     display: flex;
-    justify-content: space-between;
-    background-color: #003a85; /* Un tono más oscuro para el nav */
-    padding: 12px 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    justify-content: center; /* Centrar enlaces */
+    background-color: var(--white); /* Fondo blanco */
+    padding: 10px 20px;
 }
 
 .nav-links a {
-    color: #CFE2FF;
+    color: var(--dark-gray); /* Texto de enlace oscuro */
     font-weight: 600;
     font-size: 15px;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color var(--transition-time);
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background-color var(--transition-time), color var(--transition-time);
+    margin: 0 5px; /* Espacio entre enlaces */
 }
 
 .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--primary-light); /* Fondo azul claro */
+    color: var(--primary);
     text-decoration: none;
 }
 
 /* Indicador de página actual */
 .nav-links .current-page {
-    background-color: var(--secondary);
-    color: var(--text-ink);
+    background-color: var(--primary); /* Fondo azul oscuro */
+    color: var(--white);
     font-weight: 700;
 }
 
 .nav-links .current-page:hover {
-    background-color: var(--secondary);
-    color: var(--text-ink);
+    background-color: var(--primary);
+    color: var(--white);
 }
 
 
@@ -227,16 +269,17 @@ header {
    ====================================================================== */
 
 .alert-banner {
-    background-color: var(--teal);
+    background-color: var(--primary); /* Azul principal */
     color: var(--white);
     padding: 15px 0;
     text-align: center;
     font-weight: 600;
     font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .alert-banner a {
-    color: var(--secondary);
+    color: var(--secondary); /* Acento amarillo */
     text-decoration: underline;
     font-weight: 700;
 }
@@ -250,33 +293,139 @@ header {
    3. HERO SECTIONS (Index y Producto)
    ====================================================================== */
 
-/* Estilo para el Hero Genérico (Index) */
+/* Hero para la página principal (Index) */
 .hero-style-one {
     background: linear-gradient(135deg, var(--primary) 0%, #003a85 100%);
     color: var(--white);
     padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Para que la imagen de fondo no se salga */
 }
 
-/* Estilo para el Hero de las Páginas de Producto (Fondo más oscuro, con imagen opcional) */
-.hero-new-style {
-    background: linear-gradient(135deg, var(--primary) 0%, #003a85 100%);
+/* Imagen de fondo para el hero del index */
+.hero-style-one::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Imagen de equipo/oficina */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Opacidad para que el texto resalte */
+    z-index: 0;
+}
+
+.hero-style-one > .container {
+    position: relative; /* Asegura que el contenido esté por encima del overlay */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px; /* Altura mínima */
+}
+
+.hero-style-one h1, .hero-style-one .lead {
     color: var(--white);
-    padding: 100px 0;
+}
+.hero-style-one .btn-primary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text-ink);
+}
+.hero-style-one .btn-primary:hover {
+    background-color: #e6a000;
+    border-color: #e6a000;
+}
+.hero-style-one .btn-ghost {
+    color: var(--white);
+    border-color: var(--white);
+}
+.hero-style-one .btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Hero para las páginas de producto (con imagen lateral/derecha como en el diseño) */
+.hero-new-style {
+    background: var(--primary-light); /* Fondo azul claro como la primera sección del diseño */
+    color: var(--dark-gray);
+    padding: 80px 0;
+    text-align: left; /* Volver a alinear a la izquierda */
+}
+
+.hero-new-style h1 {
+    color: var(--primary); /* Título principal en azul oscuro */
+    font-size: 52px; /* Un poco más pequeño para dejar espacio a la imagen */
+}
+
+.hero-new-style h1 span {
+    color: var(--text-ink); /* Parte del título en color de texto */
+}
+
+.hero-new-style .lead {
+    color: var(--muted);
+}
+
+.hero-new-style .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.hero-new-style .btn-primary:hover {
+    background-color: #003a85;
+    border-color: #003a85;
+}
+
+.hero-new-style .btn-teal { /* Un segundo botón de CTA */
+    background-color: var(--teal);
+    border-color: var(--teal);
+    color: var(--white);
+}
+
+.hero-new-style .btn-teal:hover {
+    background-color: #008f7b;
+    border-color: #008f7b;
+}
+
+.hero-new-style .grid-2 {
+    align-items: center;
+}
+.hero-new-style img {
+    max-width: 90%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium); /* Sombra más pronunciada para la imagen destacada */
 }
 
 /* ======================================================================
-   4. LAYOUT GRIDS
+   4. SECTIONS (General Content)
    ====================================================================== */
 
-/* Grid de 2 Columnas */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: flex-start;
+.section-title {
+    text-align: center;
+    color: var(--text-ink);
+    margin-bottom: 10px;
+    font-weight: 800;
 }
 
-/* Grid de Características (2x2) */
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+}
+
+/* Key Features Section (Grid de 3-4 columnas de cards) */
+.key-features-section {
+    background-color: var(--white); /* Fondo blanco */
+    padding: 80px 0;
+}
+
 .features-grid-new {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -287,17 +436,31 @@ header {
 .feature-item-new {
     text-align: center;
     padding: 30px;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light); /* Sombra suave para las tarjetas */
+    border: 1px solid var(--medium-gray);
+    transition: transform var(--transition-time), box-shadow var(--transition-time);
+}
+
+.feature-item-new:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+    box-shadow: var(--shadow-medium);
 }
 
 .icon-new-style {
-    font-size: 40px;
+    font-size: 45px; /* Iconos más grandes */
     color: var(--primary);
     margin-bottom: 20px;
-    background-color: var(--light-gray);
+    background-color: var(--primary-light); /* Fondo azul claro para el icono */
     border-radius: 50%;
     padding: 20px;
-    display: inline-block;
-    border: 2px solid #e2e8f0;
+    display: inline-flex; /* Para centrar el icono verticalmente */
+    align-items: center;
+    justify-content: center;
+    width: 90px; /* Tamaño fijo del círculo */
+    height: 90px;
+    border: 2px solid rgba(0, 74, 173, 0.1); /* Borde sutil del mismo color que el icono */
 }
 
 .feature-item-new h3 {
@@ -305,12 +468,16 @@ header {
     color: var(--text-ink);
     font-weight: 700;
 }
+.feature-item-new p {
+    color: var(--muted);
+}
 
-/* Sección de "Acerca de / Valor Agregado" (Texto + Imagen/Form) */
+
+/* About / Value Proposition Section (Texto + Imagen) */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 60px; /* Más espacio */
     align-items: center;
 }
 
@@ -318,6 +485,7 @@ header {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
+    box-shadow: var(--shadow-medium); /* Sombra para la imagen */
 }
 
 .about-image-overlay img {
@@ -329,83 +497,152 @@ header {
 }
 
 .about-content-box {
-    padding: 30px;
+    padding: 40px; /* Más padding en la card */
     background-color: var(--white);
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--medium-gray);
 }
 
 .about-new-style {
-    padding: 60px 0;
+    padding: 90px 0;
     background-color: var(--light-gray);
 }
 
 .dark-bg { /* Sección especial con fondo oscuro para contraste */
-    background-color: #003a85;
+    background-color: var(--primary); /* Azul principal */
     color: var(--white);
 }
 
 .dark-bg h2 {
-    color: var(--secondary);
+    color: var(--white); /* Títulos blancos sobre fondo oscuro */
 }
 .dark-bg .lead {
     color: #CFE2FF;
 }
+.dark-bg .about-content-box {
+    background-color: var(--white); /* La card dentro del dark-bg sigue siendo blanca */
+}
+.dark-bg .about-content-box h2 {
+    color: var(--text-ink); /* El título dentro de la card blanca es oscuro */
+}
+.dark-bg .about-content-box ul {
+    color: var(--text-ink);
+}
+
+/* FAQ Section (Cards de preguntas/respuestas) */
+.faq-section {
+    background-color: var(--white);
+}
+.faq-item .card {
+    margin-bottom: 20px;
+    cursor: pointer; /* Indica que es clicable */
+}
+.faq-item h3 {
+    color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq-item h3 i {
+    font-size: 20px;
+}
+.faq-item p {
+    margin-top: 10px;
+    display: none; /* Oculta la respuesta por defecto */
+}
+.faq-item.active p {
+    display: block; /* Muestra la respuesta si está activa */
+}
 
 
 /* ======================================================================
-   5. FORMULARIOS & INPUTS
+   5. FORMULARIOS & INPUTS (Cotización)
    ====================================================================== */
 
 .input-form {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 12px;
-    border: 2px solid #cbd5e1;
-    border-radius: 6px;
+    padding: 14px 18px; /* Más padding */
+    margin-bottom: 15px;
+    border: 1px solid var(--medium-gray); /* Borde suave */
+    border-radius: 8px; /* Bordes más redondeados */
     font-size: 16px;
     transition: border-color var(--transition-time), box-shadow var(--transition-time);
     font-family: var(--font-body);
+    color: var(--text-ink);
+    background-color: var(--light-gray); /* Fondo ligero para los inputs */
 }
 
 .input-form:focus {
     border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.2);
+    box-shadow: 0 0 0 4px rgba(0, 74, 173, 0.15); /* Sombra suave al enfocar */
+    background-color: var(--white);
 }
+
+select.input-form {
+    appearance: none; /* Quitar estilo nativo de select */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236b7280%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.6-6.4H18.9c-5%200-9.8%202-13.6%206.4-7.6%207.6-7.6%2019.9%200%2027.5l128%20128c7.6%207.6%2019.9%207.6%2027.5%200l128-128c7.6-7.6%207.6-19.9%200-27.5z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 12px auto;
+    padding-right: 40px; /* Espacio para la flecha */
+}
+
+/* Contenedor del formulario de contacto */
+.contact-section {
+    background: linear-gradient(180deg, var(--light-gray) 0%, var(--primary-light) 100%); /* Fondo degradado */
+    padding: 90px 0;
+}
+.contact-section h2 {
+    color: var(--primary);
+}
+.contact-section .lead {
+    color: var(--dark-gray);
+}
+.contact-section .card {
+    background-color: var(--white);
+    padding: 40px;
+}
+
 
 /* ======================================================================
    6. FOOTER
    ====================================================================== */
 
 footer {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Fondo del footer oscuro */
     color: var(--white);
-    padding: 40px 0 20px;
-    margin-top: auto; /* Asegura que el footer esté en la parte inferior */
+    padding: 50px 0 25px; /* Más padding */
+    margin-top: auto;
+    font-size: 14px;
 }
 
 .foot-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* Separador más visible */
 }
 
 footer h4 {
-    color: var(--secondary);
-    font-size: 16px;
+    color: var(--secondary); /* Títulos en amarillo */
+    font-size: 18px;
     margin-bottom: 15px;
+    font-weight: 700;
 }
 
 footer p {
     font-size: 14px;
     line-height: 1.8;
+    color: #CFE2FF; /* Texto suave */
 }
 
 footer a {
     color: #CFE2FF;
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    font-size: 14px;
 }
 
 footer a:hover {
@@ -415,9 +652,9 @@ footer a:hover {
 
 .copyright {
     text-align: center;
-    padding-top: 20px;
-    font-size: 12px;
-    color: var(--muted);
+    padding-top: 25px;
+    font-size: 13px;
+    color: var(--muted); /* Texto de copyright más suave */
 }
 
 /* ======================================================================
@@ -426,26 +663,26 @@ footer a:hover {
 
 .floating-wa {
     position: fixed;
-    bottom: 25px;
-    right: 25px;
+    bottom: 30px; /* Más abajo */
+    right: 30px; /* Más a la derecha */
     z-index: 1000;
 }
 
 .floating-wa a {
     background-color: #25D366; /* Color de WhatsApp */
     color: var(--white);
-    padding: 15px 25px;
+    padding: 16px 28px; /* Más padding */
     border-radius: 50px;
     font-weight: 700;
-    font-size: 17px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform var(--transition-time);
+    font-size: 18px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25); /* Sombra más definida */
+    transition: transform var(--transition-time), background-color var(--transition-time);
 }
 
 .floating-wa a:hover {
     text-decoration: none;
-    transform: translateY(-3px);
-    background-color: #128C7E;
+    transform: translateY(-4px); /* Efecto más pronunciado */
+    background-color: #1aae55; /* Un verde un poco más oscuro */
 }
 
 /* ======================================================================
@@ -455,18 +692,31 @@ footer a:hover {
 @media (max-width: 900px) {
     .grid-2, .about-grid {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
-    .about-image-overlay {
+    .hero-new-style .grid-2 > div:last-child { /* Imagen del hero de producto */
         order: -1; /* Mueve la imagen arriba en móviles */
+        margin-bottom: 30px;
     }
 
-    h1 { font-size: 36px; }
-    h2 { font-size: 28px; }
+    h1 { font-size: 40px; }
+    h2 { font-size: 32px; }
+    h3 { font-size: 22px; }
 
     .hero-style-one, .hero-new-style {
-        padding: 60px 0;
+        padding: 70px 0;
+        text-align: center; /* Centrar el texto en móviles */
+    }
+    .hero-new-style h1, .hero-new-style h1 span, .hero-new-style .lead {
         text-align: center;
+    }
+    .hero-new-style .btn-primary, .hero-new-style .btn-teal {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+    .hero-new-style .grid-2 div:first-child > div { /* Contenedor de botones */
+        justify-content: center;
     }
 }
 
@@ -483,35 +733,81 @@ footer a:hover {
     }
     .header-actions .btn {
         flex-grow: 1;
+        padding: 10px 15px;
     }
     .nav-links {
-        overflow-x: auto;
+        overflow-x: auto; /* Scroll horizontal si no caben los enlaces */
         justify-content: flex-start;
         flex-wrap: nowrap;
     }
     .nav-links a {
-        flex-shrink: 0; /* Evita que los enlaces se achiquen */
+        flex-shrink: 0;
         margin-right: 15px;
+        font-size: 14px;
+        padding: 6px 10px;
     }
 
     /* Secciones */
     .section {
-        padding: 40px 0;
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+    .section-subtitle {
+        font-size: 1rem;
     }
 
     .features-grid-new {
         grid-template-columns: 1fr;
     }
-}
-
-@media (max-width: 400px) {
-    .floating-wa a {
-        font-size: 14px;
-        padding: 10px 15px;
+    .feature-item-new {
+        padding: 25px;
     }
-    
+    .icon-new-style {
+        font-size: 40px;
+        width: 80px;
+        height: 80px;
+        padding: 15px;
+    }
+
+    .about-content-box {
+        padding: 30px;
+    }
+
+    /* Footer */
     .foot-grid {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 20px;
+    }
+    footer h4 {
+        margin-top: 20px;
     }
 }
+
+@media (max-width: 400px) {
+    h1 { font-size: 34px; }
+    h2 { font-size: 26px; }
+
+    .hero-style-one > .container {
+        min-height: 350px;
+    }
+
+    .floating-wa a {
+        font-size: 15px;
+        padding: 12px 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .brand span { /* Oculta el texto del logo si hay poco espacio */
+        display: none;
+    }
+    .brand img {
+        height: 35px;
+        margin-right: 0;
+    }
+}
+
+```
